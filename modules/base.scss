@@ -29,7 +29,7 @@ html,body{
 
 
 .hide{
-  @extends %hide;
+  @extend %hide;
   &.--a{
     display: none
   }

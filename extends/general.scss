@@ -1,0 +1,13 @@
+%accent-colors{
+  color :$accent-color;
+  // background: $accent-background;
+}
+%hide{
+    visibility: hidden;
+    opacity: 0;
+}
+
+%show{
+    visibility: visible;
+    opacity: 1;
+}

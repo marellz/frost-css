@@ -1,0 +1,40 @@
+@function wordify($integer){
+  $string : 'nan';
+  @if($integer==1){
+    $string : "one"
+  }
+  @if($integer==2){
+    $string : "two"
+  }
+  @if($integer==3){
+    $string : "three"
+  }
+  @if($integer==4){
+    $string : "four"
+  }
+  @if($integer==5){
+    $string : "five"
+  }
+  @if($integer==6){
+    $string : "six"
+  }
+  @if($integer==7){
+    $string : "seven"
+  }
+  @if($integer==8){
+    $string : "eight"
+  }
+  @if($integer==9){
+    $string : "nine"
+  }
+  @if($integer==10){
+    $string : "ten"
+  }
+  @if($integer==11){
+    $string : "eleven"
+  }
+  @if($integer==12){
+    $string : "twelve"
+  }
+  @return $string;
+}

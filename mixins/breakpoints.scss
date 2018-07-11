@@ -1,0 +1,46 @@
+//  0  -> 480  MOBILE
+@mixin mobile(){
+
+}
+// 480 -> 768  MOBILE   // MOBILE ONLY
+@mixin mobile-s(){
+
+}
+
+.mobile-only{
+  
+}
+@mixin mobile-only(){
+
+}
+// 769 -> 1023 TABLET   //TOUCH-ONLY
+
+@mixin tablet(){
+
+}
+
+.touch-only{}
+@mixin touch-only(){
+
+}
+//1024 -> 1215 DESKTOP
+
+@mixin desktop(){
+
+}
+//1216 -> 1407 WIDE
+@mixin wide-screen(){
+
+}
+//1407 -> unlimited FULLHD  //DESKTOP-ONLY
+
+@mixin fullhd(){
+
+}
+
+.desktop-only{
+
+}
+@mixin desktop-only(){
+
+}

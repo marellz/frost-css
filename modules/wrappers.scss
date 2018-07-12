@@ -3,6 +3,9 @@
   .tabs{
     .tabs-list,ul{
       overflow: auto;
+      &.c{
+        text-align: center;
+      }
       .tabs,li{
         display: inline-block;
         padding: 0 1em;
@@ -13,7 +16,7 @@
         line-height: 50px;
 
         &.is-active{
-          color: $accent;
+          color: $accent-color;
           border-bottom: 2px solid currentColor;
         }
       }
@@ -32,9 +35,42 @@
       &.is-active{
         display: block;
       }
-
     }
   }
 }
 // BOX
+.box{
+  padding: 1em;
+  background: white;
+  color: black;
+  &.dark{
+    background: rgba(black,.7);
+    color: white;
+  }
+}
+// CARD
+.card{
+  padding: 1em;
+  -webkit-box-shadow: 0 0 20px -10px;
+  -moz-box-shadow: 0 0 20px -10px;
+  box-shadow: 0 0 20px -10px;
+}
 // MESSAGE
+.message,.message-box,.message-card{
+  overflow: auto;
+  display: inline-block;
+  >div{
+    float: left;
+    clear: both;
+    width: 100%;
+  }
+  .message-header{
+    padding: 1em;
+    border-bottom: 1px solid grey;
+  }
+  .message-content{
+    padding: 1em 2em;
+    font-size: 15px;
+    line-height: 170%;
+  }
+}

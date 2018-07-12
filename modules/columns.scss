@@ -1,0 +1,131 @@
+@import "../tools/columns.scss";
+
+.row{
+  display: block;
+  width: 100%;
+  zoom: 1;
+  width: 100% !important;
+  clear: both;
+  &:before, &:after {
+    content: '';
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+
+  // CENTERING
+  &.c,&.-c{
+    text-align: center;
+    >.col,>[class*='col-']{
+      display: inline-block !important;
+      float: none;
+      vertical-align: top;
+      /* NOTE: prevent child elements from adopting
+              the text align property
+      */
+      text-align: initial !important;
+
+    }
+  }
+
+  // FLEX
+  &.flex{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    .col{
+      width: 100%;
+      float: none;
+    }
+  }
+
+  // COLS
+  >.col,>[class*="col-"]{
+    float: left;
+    display: block;
+  }
+
+  // STANDARD MARGIN
+
+  @include col-x(1.5%);
+  @include x-y(1.5%);
+  >.col{
+    margin: 1.5%;
+  }
+
+  // NO MARGIN
+  &.no-margin{
+    @include col-x(0%);
+    @include x-y(0%);
+    >.col{
+      margin: 0%;
+    }
+  }
+
+
+
+  // SMALL MARGIN
+  &.small-margin{
+    @include col-x(0.5%);
+    @include x-y(0.5%);
+    >.col{
+      margin: 0.5%;
+    }
+  }
+
+
+  // LARGE MARGIN
+  &.large-margin{
+    @include col-x(2%);
+    @include x-y(2%);
+    >.col{
+      margin: 2%;
+    }
+  }
+
+  // BREAKPOINTS
+
+  // 0-480
+  @include mobile-small(){
+    @include col-screen-x(1.5%,"ms");
+    &.no-margin{
+      @include col-screen-x(0%,"ms");
+    }
+  }
+  // 481-768
+  @include mobile-large(){
+    @include col-screen-x(1.5%,"ml");
+    &.no-margin{
+      @include col-screen-x(0,"ml");
+    }
+  }
+  // 769-1023
+  @include tablet(){
+    @include col-screen-x(1.5%,"tl");
+    &.no-margin{
+      @include col-screen-x(0,"tl");
+    }
+  }
+  // 1024-1215
+  @include desktop(){
+    @include col-screen-x(1.5%,"dt");
+    &.no-margin{
+      @include col-screen-x(0,"dt");
+    }
+  }
+
+  //cap row width at 1216px
+  max-width: 1216px;
+  margin: 0 auto;
+
+}

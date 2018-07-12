@@ -3,7 +3,8 @@ $total-columns : 12;
 @import '../functions/wordify.scss';
 
 @function calculate-width($i, $p , $y){
-  @return ((100% / $i) * $p ) - (2 * $y);
+  $width : ((100% / $i) * $p ) - (2 * $y);
+  @return $width;
 }
 
 @mixin col-x($margin){
@@ -20,10 +21,21 @@ $total-columns : 12;
 @mixin x-y($margin){
   @for $i from 1 through $total-columns{
     @for $p from 1 through $i {
-      .col.#{wordify($p)}-#{wordify($i)},
-      .col.#{wordify($p)}_#{wordify($i)} {
+      .col.#{wordify($p)}-#{wordify($i)} {
         width : calculate-width($i,$p,$margin);
       }
+    }
+  }
+}
+
+
+@mixin col-screen-x($margin,$screen){
+  *[class*='col-#{$screen}']{
+    margin: $margin;
+  }
+  @for $n from 1 through $total-columns{
+    .col-#{$screen}-#{$n}{
+        width: calculate-width($total-columns,$n,$margin);
     }
   }
 }

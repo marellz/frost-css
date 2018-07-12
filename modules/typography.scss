@@ -1,0 +1,119 @@
+h1,h2,h3,h4,h5,h6,span,a,i,p{
+  &.typ{
+    display: block;
+  }
+
+  &.txt{
+    display: inline-block;
+  }
+
+  &.typ,&.txt{
+    text-align: initial !important;
+    font-weight: 400;
+
+    //align
+    &.c{
+      text-align: center !important;
+    }
+    &.r{
+      text-align: right !important;
+    }
+
+    //thickness
+    &.thick,.bold{
+      font-weight: bold;
+      font-weight: 700;
+    }
+    &.thin,.light{
+      font-weight: lighter;
+      font-weight: 300;
+    }
+
+    //sizes
+    &.xxl{
+      font-size: $font-xxl;
+    }
+    &.xl{
+      font-size: $font-xl;
+    }
+    &.l{
+      font-size: $font-l;
+    }
+    &.m,&{
+      font-size: $font-m;
+    }
+    &.s{
+      font-size: $font-s;
+    }
+    &.xs{
+      font-size: $font-xs;
+    }
+    &.xxs{
+      font-size: $font-xxs;
+    }
+
+    //responsive sizes
+    &.resp{
+      &.xxl{}
+      &.xl{}
+      &.l{}
+      &,&.m{}
+      &.s{}
+      &.xs{}
+      &.xxs{}
+    }
+
+    //cases
+    &.lc{
+      text-transform: lowercase;
+    }
+    &.uc{
+      text-transform: uppercase;
+    }
+    &.cp{
+      text-transform: capitalize;
+    }
+
+    //styles
+    &.it{
+      font-style: italic;
+    }
+    &.ul{
+      text-decoration: underline;
+    }
+    &.st{ /*strikethrough*/
+      text-decoration: line-through;
+    }
+
+    //decoration styles
+    &.ul,&.st{
+      &.--dash{
+        -webkit-text-decoration-style: dashed;
+        text-decoration-style: dashed;
+      }
+      &.--dotted{
+        -webkit-text-decoration-style: dotted;
+        text-decoration-style: dotted;
+      }
+      &.--double{
+        -webkit-text-decoration-style: double;
+        text-decoration-style: double;
+      }
+    }
+  }
+}
+
+//paragraphs
+p{
+  &.typ{
+    line-height: 180%;
+
+    //line-height size
+    &.tall{
+      line-height: 210%;
+    }
+    &.short{
+      line-height: 160%;
+    }
+  }
+}

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
 .hide {
   visibility: hidden;
   opacity: 0; }
@@ -13,16 +14,84 @@ html, body {
   box-sizing: border-box; }
 
 .frost, #app {
-  font: 100% 'Open Sans', sans-serif;
+  font: 100% "Open Sans", serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column; }
   .frost .header, .frost .footer, #app .header, #app .footer {
+    -webkit-box-flex: 0;
+    -ms-flex: none;
     flex: none; }
   .frost .main, .frost .wrap, #app .main, #app .wrap {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 auto;
     flex: 1 0 auto;
     position: relative; }
 
 .hide.--a {
   display: none; }
+
+h1.typ, h2.typ, h3.typ, h4.typ, h5.typ, h6.typ, span.typ, a.typ, i.typ, p.typ {
+  display: block; }
+h1.txt, h2.txt, h3.txt, h4.txt, h5.txt, h6.txt, span.txt, a.txt, i.txt, p.txt {
+  display: inline-block; }
+h1.typ, h1.txt, h2.typ, h2.txt, h3.typ, h3.txt, h4.typ, h4.txt, h5.typ, h5.txt, h6.typ, h6.txt, span.typ, span.txt, a.typ, a.txt, i.typ, i.txt, p.typ, p.txt {
+  text-align: initial !important;
+  font-weight: 400; }
+  h1.typ.c, h1.txt.c, h2.typ.c, h2.txt.c, h3.typ.c, h3.txt.c, h4.typ.c, h4.txt.c, h5.typ.c, h5.txt.c, h6.typ.c, h6.txt.c, span.typ.c, span.txt.c, a.typ.c, a.txt.c, i.typ.c, i.txt.c, p.typ.c, p.txt.c {
+    text-align: center !important; }
+  h1.typ.r, h1.txt.r, h2.typ.r, h2.txt.r, h3.typ.r, h3.txt.r, h4.typ.r, h4.txt.r, h5.typ.r, h5.txt.r, h6.typ.r, h6.txt.r, span.typ.r, span.txt.r, a.typ.r, a.txt.r, i.typ.r, i.txt.r, p.typ.r, p.txt.r {
+    text-align: right !important; }
+  h1.typ.thick, h1.typ .bold, h1.txt.thick, h1.txt .bold, h2.typ.thick, h2.typ .bold, h2.txt.thick, h2.txt .bold, h3.typ.thick, h3.typ .bold, h3.txt.thick, h3.txt .bold, h4.typ.thick, h4.typ .bold, h4.txt.thick, h4.txt .bold, h5.typ.thick, h5.typ .bold, h5.txt.thick, h5.txt .bold, h6.typ.thick, h6.typ .bold, h6.txt.thick, h6.txt .bold, span.typ.thick, span.typ .bold, span.txt.thick, span.txt .bold, a.typ.thick, a.typ .bold, a.txt.thick, a.txt .bold, i.typ.thick, i.typ .bold, i.txt.thick, i.txt .bold, p.typ.thick, p.typ .bold, p.txt.thick, p.txt .bold {
+    font-weight: bold;
+    font-weight: 700; }
+  h1.typ.thin, h1.typ .light, h1.txt.thin, h1.txt .light, h2.typ.thin, h2.typ .light, h2.txt.thin, h2.txt .light, h3.typ.thin, h3.typ .light, h3.txt.thin, h3.txt .light, h4.typ.thin, h4.typ .light, h4.txt.thin, h4.txt .light, h5.typ.thin, h5.typ .light, h5.txt.thin, h5.txt .light, h6.typ.thin, h6.typ .light, h6.txt.thin, h6.txt .light, span.typ.thin, span.typ .light, span.txt.thin, span.txt .light, a.typ.thin, a.typ .light, a.txt.thin, a.txt .light, i.typ.thin, i.typ .light, i.txt.thin, i.txt .light, p.typ.thin, p.typ .light, p.txt.thin, p.txt .light {
+    font-weight: lighter;
+    font-weight: 300; }
+  h1.typ.xxl, h1.txt.xxl, h2.typ.xxl, h2.txt.xxl, h3.typ.xxl, h3.txt.xxl, h4.typ.xxl, h4.txt.xxl, h5.typ.xxl, h5.txt.xxl, h6.typ.xxl, h6.txt.xxl, span.typ.xxl, span.txt.xxl, a.typ.xxl, a.txt.xxl, i.typ.xxl, i.txt.xxl, p.typ.xxl, p.txt.xxl {
+    font-size: 4.5rem; }
+  h1.typ.xl, h1.txt.xl, h2.typ.xl, h2.txt.xl, h3.typ.xl, h3.txt.xl, h4.typ.xl, h4.txt.xl, h5.typ.xl, h5.txt.xl, h6.typ.xl, h6.txt.xl, span.typ.xl, span.txt.xl, a.typ.xl, a.txt.xl, i.typ.xl, i.txt.xl, p.typ.xl, p.txt.xl {
+    font-size: 3.5rem; }
+  h1.typ.l, h1.txt.l, h2.typ.l, h2.txt.l, h3.typ.l, h3.txt.l, h4.typ.l, h4.txt.l, h5.typ.l, h5.txt.l, h6.typ.l, h6.txt.l, span.typ.l, span.txt.l, a.typ.l, a.txt.l, i.typ.l, i.txt.l, p.typ.l, p.txt.l {
+    font-size: 2.5rem; }
+  h1.typ.m, h1.typ, h1.txt.m, h1.txt, h2.typ.m, h2.typ, h2.txt.m, h2.txt, h3.typ.m, h3.typ, h3.txt.m, h3.txt, h4.typ.m, h4.typ, h4.txt.m, h4.txt, h5.typ.m, h5.typ, h5.txt.m, h5.txt, h6.typ.m, h6.typ, h6.txt.m, h6.txt, span.typ.m, span.typ, span.txt.m, span.txt, a.typ.m, a.typ, a.txt.m, a.txt, i.typ.m, i.typ, i.txt.m, i.txt, p.typ.m, p.typ, p.txt.m, p.txt {
+    font-size: 1.25rem; }
+  h1.typ.s, h1.txt.s, h2.typ.s, h2.txt.s, h3.typ.s, h3.txt.s, h4.typ.s, h4.txt.s, h5.typ.s, h5.txt.s, h6.typ.s, h6.txt.s, span.typ.s, span.txt.s, a.typ.s, a.txt.s, i.typ.s, i.txt.s, p.typ.s, p.txt.s {
+    font-size: 1rem; }
+  h1.typ.xs, h1.txt.xs, h2.typ.xs, h2.txt.xs, h3.typ.xs, h3.txt.xs, h4.typ.xs, h4.txt.xs, h5.typ.xs, h5.txt.xs, h6.typ.xs, h6.txt.xs, span.typ.xs, span.txt.xs, a.typ.xs, a.txt.xs, i.typ.xs, i.txt.xs, p.typ.xs, p.txt.xs {
+    font-size: 0.85rem; }
+  h1.typ.xxs, h1.txt.xxs, h2.typ.xxs, h2.txt.xxs, h3.typ.xxs, h3.txt.xxs, h4.typ.xxs, h4.txt.xxs, h5.typ.xxs, h5.txt.xxs, h6.typ.xxs, h6.txt.xxs, span.typ.xxs, span.txt.xxs, a.typ.xxs, a.txt.xxs, i.typ.xxs, i.txt.xxs, p.typ.xxs, p.txt.xxs {
+    font-size: 0.75rem; }
+  h1.typ.lc, h1.txt.lc, h2.typ.lc, h2.txt.lc, h3.typ.lc, h3.txt.lc, h4.typ.lc, h4.txt.lc, h5.typ.lc, h5.txt.lc, h6.typ.lc, h6.txt.lc, span.typ.lc, span.txt.lc, a.typ.lc, a.txt.lc, i.typ.lc, i.txt.lc, p.typ.lc, p.txt.lc {
+    text-transform: lowercase; }
+  h1.typ.uc, h1.txt.uc, h2.typ.uc, h2.txt.uc, h3.typ.uc, h3.txt.uc, h4.typ.uc, h4.txt.uc, h5.typ.uc, h5.txt.uc, h6.typ.uc, h6.txt.uc, span.typ.uc, span.txt.uc, a.typ.uc, a.txt.uc, i.typ.uc, i.txt.uc, p.typ.uc, p.txt.uc {
+    text-transform: uppercase; }
+  h1.typ.cp, h1.txt.cp, h2.typ.cp, h2.txt.cp, h3.typ.cp, h3.txt.cp, h4.typ.cp, h4.txt.cp, h5.typ.cp, h5.txt.cp, h6.typ.cp, h6.txt.cp, span.typ.cp, span.txt.cp, a.typ.cp, a.txt.cp, i.typ.cp, i.txt.cp, p.typ.cp, p.txt.cp {
+    text-transform: capitalize; }
+  h1.typ.it, h1.txt.it, h2.typ.it, h2.txt.it, h3.typ.it, h3.txt.it, h4.typ.it, h4.txt.it, h5.typ.it, h5.txt.it, h6.typ.it, h6.txt.it, span.typ.it, span.txt.it, a.typ.it, a.txt.it, i.typ.it, i.txt.it, p.typ.it, p.txt.it {
+    font-style: italic; }
+  h1.typ.ul, h1.txt.ul, h2.typ.ul, h2.txt.ul, h3.typ.ul, h3.txt.ul, h4.typ.ul, h4.txt.ul, h5.typ.ul, h5.txt.ul, h6.typ.ul, h6.txt.ul, span.typ.ul, span.txt.ul, a.typ.ul, a.txt.ul, i.typ.ul, i.txt.ul, p.typ.ul, p.txt.ul {
+    text-decoration: underline; }
+  h1.typ.st, h1.txt.st, h2.typ.st, h2.txt.st, h3.typ.st, h3.txt.st, h4.typ.st, h4.txt.st, h5.typ.st, h5.txt.st, h6.typ.st, h6.txt.st, span.typ.st, span.txt.st, a.typ.st, a.txt.st, i.typ.st, i.txt.st, p.typ.st, p.txt.st {
+    /*strikethrough*/
+    text-decoration: line-through; }
+  h1.typ.ul.--dash, h1.typ.st.--dash, h1.txt.ul.--dash, h1.txt.st.--dash, h2.typ.ul.--dash, h2.typ.st.--dash, h2.txt.ul.--dash, h2.txt.st.--dash, h3.typ.ul.--dash, h3.typ.st.--dash, h3.txt.ul.--dash, h3.txt.st.--dash, h4.typ.ul.--dash, h4.typ.st.--dash, h4.txt.ul.--dash, h4.txt.st.--dash, h5.typ.ul.--dash, h5.typ.st.--dash, h5.txt.ul.--dash, h5.txt.st.--dash, h6.typ.ul.--dash, h6.typ.st.--dash, h6.txt.ul.--dash, h6.txt.st.--dash, span.typ.ul.--dash, span.typ.st.--dash, span.txt.ul.--dash, span.txt.st.--dash, a.typ.ul.--dash, a.typ.st.--dash, a.txt.ul.--dash, a.txt.st.--dash, i.typ.ul.--dash, i.typ.st.--dash, i.txt.ul.--dash, i.txt.st.--dash, p.typ.ul.--dash, p.typ.st.--dash, p.txt.ul.--dash, p.txt.st.--dash {
+    -webkit-text-decoration-style: dashed;
+    text-decoration-style: dashed; }
+  h1.typ.ul.--dotted, h1.typ.st.--dotted, h1.txt.ul.--dotted, h1.txt.st.--dotted, h2.typ.ul.--dotted, h2.typ.st.--dotted, h2.txt.ul.--dotted, h2.txt.st.--dotted, h3.typ.ul.--dotted, h3.typ.st.--dotted, h3.txt.ul.--dotted, h3.txt.st.--dotted, h4.typ.ul.--dotted, h4.typ.st.--dotted, h4.txt.ul.--dotted, h4.txt.st.--dotted, h5.typ.ul.--dotted, h5.typ.st.--dotted, h5.txt.ul.--dotted, h5.txt.st.--dotted, h6.typ.ul.--dotted, h6.typ.st.--dotted, h6.txt.ul.--dotted, h6.txt.st.--dotted, span.typ.ul.--dotted, span.typ.st.--dotted, span.txt.ul.--dotted, span.txt.st.--dotted, a.typ.ul.--dotted, a.typ.st.--dotted, a.txt.ul.--dotted, a.txt.st.--dotted, i.typ.ul.--dotted, i.typ.st.--dotted, i.txt.ul.--dotted, i.txt.st.--dotted, p.typ.ul.--dotted, p.typ.st.--dotted, p.txt.ul.--dotted, p.txt.st.--dotted {
+    -webkit-text-decoration-style: dotted;
+    text-decoration-style: dotted; }
+  h1.typ.ul.--double, h1.typ.st.--double, h1.txt.ul.--double, h1.txt.st.--double, h2.typ.ul.--double, h2.typ.st.--double, h2.txt.ul.--double, h2.txt.st.--double, h3.typ.ul.--double, h3.typ.st.--double, h3.txt.ul.--double, h3.txt.st.--double, h4.typ.ul.--double, h4.typ.st.--double, h4.txt.ul.--double, h4.txt.st.--double, h5.typ.ul.--double, h5.typ.st.--double, h5.txt.ul.--double, h5.txt.st.--double, h6.typ.ul.--double, h6.typ.st.--double, h6.txt.ul.--double, h6.txt.st.--double, span.typ.ul.--double, span.typ.st.--double, span.txt.ul.--double, span.txt.st.--double, a.typ.ul.--double, a.typ.st.--double, a.txt.ul.--double, a.txt.st.--double, i.typ.ul.--double, i.typ.st.--double, i.txt.ul.--double, i.txt.st.--double, p.typ.ul.--double, p.typ.st.--double, p.txt.ul.--double, p.txt.st.--double {
+    -webkit-text-decoration-style: double;
+    text-decoration-style: double; }
+
+p.typ {
+  line-height: 180%; }
+  p.typ.tall {
+    line-height: 210%; }
+  p.typ.short {
+    line-height: 160%; }

@@ -1,0 +1,54 @@
+.buttons{
+  text-align: center;
+  button,.button{
+    margin: 5px;
+    vertical-align: middle;
+  }
+}
+
+button,.button{
+  @extend %button;
+
+  @if($button-border-radius){
+    border-radius: $button-border-radius;
+  }
+
+  //primary
+  &{
+    background: $accent-color;
+    color: white;
+  }
+
+  // secondary
+  &.s{
+    line-height: $button-height - (2 * $button-border-width);
+    border: $button-border-width solid currentColor;
+    background: inherit;
+    color: $accent-color
+  }
+
+  // disabled
+  &:disabled{
+    line-height: $button-height;
+    border: none;
+    background: rgba(black,.15);
+    color: grey;
+    cursor: not-allowed;
+  }
+
+  //close
+  &.close{
+    color: white;
+    @extend %close-button;
+    &.s{
+      color: $accent-color;
+    }
+  }
+
+  //loading
+  &.loading{
+    @extend %loading-button;
+  }
+
+
+}

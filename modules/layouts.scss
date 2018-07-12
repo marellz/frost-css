@@ -1,0 +1,143 @@
+// SECTION
+
+.section,section{
+  padding: 1em;
+  width: 100%;
+
+  //full
+  &.full{
+    height: 100%;
+    height: 100vh;
+  }
+}
+
+// MODAL
+
+.modal{
+  @extend %fixed-modal;
+  @extend %hide;
+
+  //visible
+  &.is-active{
+    @extend %show;
+  }
+
+  //dark
+  &.dark{
+    color: white;
+    background: black;
+  }
+  //light
+  &.lite{
+    color: black;
+    background: white;
+  }
+
+  //close button
+  .modal-close{
+    position: absolute;
+    top: 0;
+    left: 0;
+    &.r{
+      left: unset;
+      right: 0;
+    }
+  }
+}
+
+// CENTERING
+.align{
+  display: -moz-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -moz-box-orient: vertical;
+  -moz-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -moz-box-pack: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -moz-box-align: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+
+  // NOTE: firefox will not react right to the
+  // height being set at 100%, as it'll react by
+  // copying the height of the parent element,
+  // unlike chrome.
+
+  min-height: 100%;
+  height: 100%;
+
+  &.--f{
+    //firefox workaround
+  }
+
+  text-align: initial !important;
+  &.right{
+    justify-content: flex-end;
+  }
+  &.left{
+    justify-content: flex-start;
+  }
+  .top{
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+  }
+  .bottom{
+    -ms-flex-item-align: end;
+    align-self: flex-end;
+  }
+}
+
+
+// PADDING
+$padding-average : 2rem;
+*[class*='pd-'], .pd{
+  padding: $padding-average;
+  &[class*='-xl'] { padding: $padding-average * 5}
+  &[class*='-l']  { padding: $padding-average * 3}
+  &[class*='-s']  { padding: $padding-average * .75}
+  &[class*='-xs'] { padding: $padding-average * .5}
+
+  //horizontally only
+  &[class*='-h']{
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  //vertically only
+  &[class*='-v']{
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  //combinations
+  /*
+
+  &[class*='-xs-h']
+  &[class*='-s-h']
+  &[class*='-l-h']
+  &[class*='-xl-h']
+
+  &[class*='-xs-v']
+  &[class*='-s-v']
+  &[class*='-l-v']
+  &[class*='-xl-v']
+
+  */
+
+  //none
+  &[class*='-none']{
+    padding: 0 !important;
+  }
+}

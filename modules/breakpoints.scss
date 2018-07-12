@@ -1,0 +1,47 @@
+//DISPLAY CONTROL
+
+.mobile-small-only,
+.mobile-large-only,
+.mobile-only,
+.tablet-only,
+.touch-only,
+.desktop-only{
+  display: none;
+}
+
+
+@include mobile-small{
+  .mobile-small-only{
+    display: initial;
+  }
+}
+
+@include mobile-large{
+  .mobile-large-only{
+    display: initial;
+  }
+}
+
+@include mobile-only{
+  .mobile-only{
+    display: initial;
+  }
+}
+
+@include tablet{
+  .tablet-only{
+    display: initial;
+  }
+}
+
+@include touch-only{
+  .touch-only{
+    display: initial;
+  }
+}
+
+@include desktop-only{
+  .desktop-only{
+    display: initial;
+  }
+}

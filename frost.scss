@@ -11,8 +11,8 @@
 @import "extends/layouts.scss";
 
 //mixins
-@import "mixins/breakpoints.scss";
 @import "mixins/general.scss";
+@import "mixins/breakpoints.scss";
 
 //tools
 @import "tools/columns.scss";
@@ -21,6 +21,7 @@
 @import "modules/columns.scss";
 
 @import "modules/base.scss";
+@import "modules/breakpoints.scss";
 @import "modules/buttons.scss";
 @import "modules/forms.scss";
 @import "modules/iconography.scss";

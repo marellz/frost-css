@@ -1,0 +1,265 @@
+.input{
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+
+  min-width: 200px;
+  max-width: 450px;
+
+  input,label,span,i{
+    display: block;
+    background: none;
+  }
+
+  .help-text{
+    display: block;
+  }
+
+  input{
+    padding: 15px;
+    font: inherit;
+    color: inherit;
+
+    @extend %input-props;
+
+
+    //label
+    &+label{
+      @extend %label-props;
+    }
+
+    //disabled
+    &:disabled{
+      color: gray;
+      background: rgba(black,.15);
+      pointer-events: none;
+      cursor: not-allowed;
+
+      &+label{
+        color: gray;
+        background: none;
+      }
+    }
+  }
+
+  //helptext
+  &:before{
+    @extend %input-helptext;
+    line-height: 17px;
+    font-size: 13px;
+    padding-left: 20px;
+  }
+
+  //valid/invalid
+  &.is-valid{
+    color: $green;
+  }
+  &.is-invalid{
+    color: $red;
+  }
+
+
+  // ANIMATED -> Google Style
+  &.animated{
+    input{
+      @extend %animated-input-props;
+      &+label{
+        line-height: 15px;
+        font-size: 12px;
+        &:after{
+          @extend %pseudo;
+          display: block;
+          background : currentColor;
+          height: 2px;
+          width: 100%;
+        }
+      }
+      //disabled animated
+      &:disabled{
+        &+label{
+          color: grey;
+          background:rgba(black,.15);
+        }
+      }
+    }
+    //active input
+    &.has-data input,
+    & input:focus{
+      &+label{
+        font-size: 15px;
+        line-height: $input-height;
+        position: absolute;
+        top: 0;
+
+        &:after{
+          background: $accent-color;
+        }
+      }
+    }
+
+    input,label,label:after{
+      transition: all 0.25s ease;
+    }
+  }
+
+  //FILE
+  &.file{
+    display: inline-block;
+    input{
+      @extend %hide;
+      &+label{
+        @extend %hide;
+      }
+      &[type='file'],&[type='image']{
+        @extend %hide;
+        border: none;
+        height: 0px;
+        width: 0px;
+        font-size: 0;
+        &+label{
+          @extend %show;
+          @extend %input-props;
+          text-align: center !important;
+          padding: 0;
+          overflow: hidden;
+          @if($input-border-radius){
+            border-radius: $input-border-radius;
+          }
+        }
+      }
+    }
+
+    //active file-input
+    &.has-file{
+      input{
+        &+label{
+          background: $accent-color;
+          color: white;
+        }
+      }
+    }
+  }
+
+  //TEXTAREA
+  &.textarea{
+    input,label{
+      display: none;
+    }
+    textarea,label,span{
+      display: block;
+    }
+
+    textarea{
+      @extend %textarea-props;
+    }
+
+    &.h{
+      textarea{
+        resize: horizontal;
+      }
+    }
+    &.v{
+      textarea{
+        resize: vertical;
+      }
+    }
+    &.no-resize{
+      textarea{
+        resize: none;
+      }
+    }
+  }
+
+
+  // SELECT
+  .select{
+    display: inline-block;
+    select{
+      @extend %select-props;
+      outline: none;
+      background: transparent;
+
+      //hide arrow
+      @extend %hide-select-arrow;
+    }
+
+    &:after{
+      @extend %pseudo;
+      @extend %custom-select-arrow;
+    }
+    &.c{
+      select{
+        text-align: center;
+      }
+    }
+    //multiple select
+    &.group{
+      display: flex;
+      flex-direction: row;
+      select{
+        //props for multiple select
+      }
+    }
+  }
+
+  //PILLS
+  // pill group
+  .pills{
+    .pill{
+      @extend %selectable-label;
+      vertical-align: middle;
+      display: inline-block;
+      input{
+        &+label{
+          padding: 0 1.5em;
+          @extend %input-props;
+        }
+      }
+    }
+    // centered pills
+    &.c{
+      text-align: center;
+    }
+  }
+
+
+  // TOGGLE
+  .toggle{
+    @extend %selectable-label;
+    input{
+      &+label{
+        position: relative;
+        width: $input-height * 2.5;
+        background: $accent-color;
+        &:before{
+          @extend %pseudo;
+          position: absolute;
+          left: 0;
+          right: unset;
+          height: $input-height;
+          width: $input-height;
+        }
+      }
+
+      &:checked{
+        &+label{
+          &:before{
+            left: unset;
+            right: 0;
+          }
+        }
+      }
+    }
+    //round toggles
+    &.round{
+      input{
+        &+label{
+          border-radius: $input-height / 2;
+          &:before{
+            border-radius: $input-height / 2;
+          }
+        }
+      }
+    }
+  }
+}

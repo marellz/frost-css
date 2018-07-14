@@ -1,0 +1,33 @@
+@import '../mixins/menus.scss';
+
+%inline-menus{
+
+  //basic
+  ul{
+    li{
+      display: inline-block;
+    }
+  }
+
+  //centering
+  &.c {
+    text-align: center;
+    ul{
+      display: inline-block;
+    }
+  }
+}
+
+%slider-menu{
+  @include slider-menu-props;
+}
+
+%slider-menu-props{
+  background: rgba(black,.15);
+  .-menu{
+    background: $accent-color;
+    color: white;
+    box-shadow: 0 0 25px -10px;
+    width: 250px;
+  }
+}

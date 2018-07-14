@@ -9,10 +9,10 @@
 
 %fixed-modal{
   position: fixed;
-  @extend %occupy;  
+  @extend %occupy;
 }
 
-%absolute-postition{
+%absolute-position{
   position: absolute;
   @extend %occupy;
 }

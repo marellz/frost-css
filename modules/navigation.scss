@@ -1,0 +1,68 @@
+.puller{
+  $puller-height: 4em;
+  position: relative;
+  z-index: 1000;
+  display: inline-block;
+  vertical-align: middle;
+  height: $puller-height;
+  width: $puller-height;
+
+  cursor: pointer;
+  color: $accent-color;
+
+  &:hover{
+    //accent-color-alternative
+  }
+
+  [class*='ham']{
+    text-align: center;
+    top: 50%;
+    left: 50%;
+
+    &,&:before,&:after{
+      transform: translateY(-50%);
+      position: absolute;
+      @extend %pseudo;
+      background: currentColor;
+      display: block;
+      height: 2px;
+
+      transition: all 3.5s ease;
+    }
+    .round{
+      &,&:before,&:after{
+        border-radius: 2px;
+      }
+    }
+
+    .ham{
+      &,&:before,&:after{
+        width: 22px;
+      }
+    }
+
+    .double{
+      height: 0;
+      // NOTE: verify if restating height is required
+      &:before,&:after{
+        // height: 2px;
+      }
+    }
+  }
+
+  &.is-active{
+    [class*='ham']{
+      background: trasparent;
+      &:before,&:after{
+        background: inherit;
+      }
+
+      &:before{
+        transform: rotate(45deg)
+      }
+      &:after{
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}

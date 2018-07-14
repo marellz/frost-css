@@ -10,7 +10,7 @@
   visibility: visible;
   opacity: 1; }
 
-button.close:after, .button.close:after, button.close:before, .button.close:before, button.loading:before, .button.loading:before, .input.animated input + label:after, .input .select:after, .input .toggle input + label:before {
+button.close:after, .button.close:after, button.close:before, .button.close:before, button.loading:before, .button.loading:before, .input.animated input + label:after, .input .select:after, .input .toggle input + label:before, .puller [class*='ham'], .puller [class*='ham']:before, .puller [class*='ham']:after {
   content: '';
   display: block; }
 
@@ -1508,6 +1508,41 @@ button, .button {
     width: 100%; }
   .menu.dropdown .dropdown-button {
     display: block; }
+
+.puller {
+  position: relative;
+  z-index: 1000;
+  display: inline-block;
+  vertical-align: middle;
+  height: 4em;
+  width: 4em;
+  cursor: pointer;
+  color: #00A6ED; }
+  .puller [class*='ham'] {
+    text-align: center;
+    top: 50%;
+    left: 50%; }
+    .puller [class*='ham'], .puller [class*='ham']:before, .puller [class*='ham']:after {
+      transform: translateY(-50%);
+      position: absolute;
+      background: currentColor;
+      display: block;
+      height: 2px;
+      transition: all 3.5s ease; }
+    .puller [class*='ham'] .round, .puller [class*='ham'] .round:before, .puller [class*='ham'] .round:after {
+      border-radius: 2px; }
+    .puller [class*='ham'] .ham, .puller [class*='ham'] .ham:before, .puller [class*='ham'] .ham:after {
+      width: 22px; }
+    .puller [class*='ham'] .double {
+      height: 0; }
+  .puller.is-active [class*='ham'] {
+    background: trasparent; }
+    .puller.is-active [class*='ham']:before, .puller.is-active [class*='ham']:after {
+      background: inherit; }
+    .puller.is-active [class*='ham']:before {
+      transform: rotate(45deg); }
+    .puller.is-active [class*='ham']:after {
+      transform: rotate(-45deg); }
 
 h1.typ, h2.typ, h3.typ, h4.typ, h5.typ, h6.typ, span.typ, a.typ, i.typ, p.typ {
   display: block; }

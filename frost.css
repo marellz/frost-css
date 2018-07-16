@@ -2,7 +2,11 @@
 .menu.dropdown .dropdown-button:hover {
   color: #00A6ED; }
 
-.input .pills .pill input, .input .toggle input, .hide, .input.file input, .input.file input + label, .input.file input[type='file'], .input.file input[type='image'], .modal, .menu.accordion ul > li > ul, .menu.dropdown .dropdown-menu {
+.input.pills .pill input:checked + label {
+  background: #00A6ED;
+  color: white; }
+
+.input.pills .pill input, .input.toggle input, .hide, .input.file input, .input.file input + label, .input.file input[type='file'], .input.file input[type='image'], .modal, .menu.accordion ul > li > ul, .menu.dropdown .dropdown-menu {
   visibility: hidden;
   opacity: 0; }
 
@@ -10,7 +14,7 @@
   visibility: visible;
   opacity: 1; }
 
-button.close:after, .button.close:after, button.close:before, .button.close:before, button.loading:before, .button.loading:before, .input.animated input + label:after, .input .select:after, .input .toggle input + label:before, .puller [class*='ham'], .puller [class*='ham']:before, .puller [class*='ham']:after {
+button.close:after, .button.close:after, button.close:before, .button.close:before, button.loading:before, .button.loading:before, .input.select:after, .input.toggle input + label, .input.toggle input + label:before, .puller [class*='ham'], .puller [class*='ham']:before, .puller [class*='ham']:after {
   content: '';
   display: block; }
 
@@ -92,48 +96,56 @@ button.loading, .button.loading {
     transform: rotate(0deg); }
   100% {
     transform: rotate(360deg); } }
-.input.animated input, .input.textarea textarea, .input .select select, .input input, .input.file input[type='file'] + label, .input.file input[type='image'] + label, .input .pills .pill input + label {
-  border: 2px solid;
+.input.textarea textarea, .input.select select, .input input, .input.file input[type='file'] + label, .input.file input[type='image'] + label, .input.pills .pill input + label {
+  border: 2px solid grey;
   background: none;
   border-radius: 2px;
-  height: 40px;
-  line-height: 40px;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 5px;
   outline: none; }
 
-.input input + label {
-  color: grey; }
+.input input + label, .input.textarea label {
+  color: grey;
+  text-align: left;
+  font-size: 15px;
+  padding: 5px; }
 
 .input:before {
   display: block;
   content: attr(data-text); }
 
-.input.animated input {
-  border: none; }
-
-.input .pills .pill input, .input .toggle input {
+.input.pills .pill input, .input.toggle input {
   height: 0;
   width: 0;
   font-size: 0; }
-  .input .pills .pill input + label, .input .toggle input + label {
+  .input.pills .pill input + label, .input.toggle input + label {
     display: inline-block; }
 
 .input.textarea textarea {
   width: 100%;
   min-height: 100px;
   max-width: 100%;
-  padding: .5em; }
+  padding: .5em;
+  line-height: normal;
+  font: inherit;
+  font-size: 16px; }
 
-.input .select select {
-  display: block; }
+.input.select select {
+  display: block;
+  width: 100%;
+  height: 50px;
+  padding: 0 20px;
+  padding-right: 50px; }
 
-.input .select select {
+.input.pills .pill input:checked + label {
+  border-color: #00A6ED; }
+
+.input.select select {
   -moz-appearance: none;
   -webkit-appearance: none; }
-  .input .select select::-ms-expand {
+  .input.select select::-ms-expand {
     display: none; }
-
-.input .select:after {
-  background: rgba(0, 0, 0, 0.2); }
 
 .menu.flat ul li, .menu.header-menu ul li {
   display: inline-block; }
@@ -1280,7 +1292,6 @@ button, .button {
   .input .help-text {
     display: block; }
   .input input {
-    padding: 15px;
     font: inherit;
     color: inherit; }
     .input input:disabled {
@@ -1299,26 +1310,23 @@ button, .button {
     color: #12BC3A; }
   .input.is-invalid {
     color: #F6511D; }
-  .input.animated input + label {
-    line-height: 15px;
-    font-size: 12px; }
-    .input.animated input + label:after {
-      display: block;
-      background: currentColor;
-      height: 2px;
-      width: 100%; }
-  .input.animated input:disabled + label {
-    color: grey;
-    background: rgba(0, 0, 0, 0.15); }
-  .input.animated.has-data input + label, .input.animated input:focus + label {
-    font-size: 15px;
-    line-height: 40px;
-    position: absolute;
-    top: 0; }
-    .input.animated.has-data input + label:after, .input.animated input:focus + label:after {
-      background: #00A6ED; }
-  .input.animated input, .input.animated label, .input.animated label:after {
-    transition: all 0.25s ease; }
+  .input.animated {
+    padding-top: 20px;
+    position: relative; }
+    .input.animated input {
+      border: none; }
+      .input.animated input + label {
+        position: absolute;
+        line-height: 35px;
+        padding-left: 15px;
+        border-bottom: 2px solid currentColor;
+        width: 100%;
+        left: 0;
+        padding-left: 5px; }
+    .input.animated.has-data input + label, .input.animated input:focus + label {
+      line-height: 100px; }
+    .input.animated input, .input.animated label, .input.animated label:after {
+      transition: all 0.25s ease; }
   .input.file {
     display: inline-block; }
     .input.file input[type='file'], .input.file input[type='image'] {
@@ -1330,7 +1338,7 @@ button, .button {
         text-align: center !important;
         padding: 0;
         overflow: hidden;
-        border-radius: 3px; }
+        border-radius: 5px; }
     .input.file.has-file input + label {
       background: #00A6ED;
       color: white; }
@@ -1344,40 +1352,66 @@ button, .button {
     resize: vertical; }
   .input.textarea.no-resize textarea {
     resize: none; }
-  .input .select {
-    display: inline-block; }
-    .input .select select {
+  .input.select {
+    display: inline-block;
+    position: relative; }
+    .input.select select {
+      position: relative;
       outline: none;
       background: transparent; }
-    .input .select.c select {
+    .input.select:after {
+      border: 2px solid red;
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-25%);
+      margin-top: 2px;
+      border: 10px solid transparent;
+      border-top-color: rgba(0, 0, 0, 0.25); }
+    .input.select.c select {
       text-align: center; }
-    .input .select.group {
+    .input.select.group {
       display: flex;
       flex-direction: row; }
-  .input .pills .pill {
-    vertical-align: middle;
-    display: inline-block; }
-    .input .pills .pill input + label {
-      padding: 0 1.5em; }
-  .input .pills.c {
-    text-align: center; }
-  .input .toggle input + label {
+  .input.pills {
+    flex-direction: row; }
+    .input.pills .pill {
+      vertical-align: middle;
+      display: inline-block;
+      margin: 5px; }
+      .input.pills .pill input + label {
+        padding: 0 1.5em; }
+    .input.pills.c {
+      text-align: center; }
+    .input.pills.b {
+      flex-direction: column; }
+      .input.pills.b .pill label {
+        width: 100%;
+        line-height: normal;
+        height: auto;
+        padding: 10px; }
+  .input.toggle input + label {
     position: relative;
-    width: 100px;
-    background: #00A6ED; }
-    .input .toggle input + label:before {
+    height: 37.5px;
+    width: 75px;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 18.75px;
+    transition: all 0.5s ease; }
+    .input.toggle input + label:before {
+      right: auto;
       position: absolute;
-      left: 0;
+      left: 1px;
+      top: 1px;
       right: unset;
-      height: 40px;
-      width: 40px; }
-  .input .toggle input:checked + label:before {
-    left: unset;
-    right: 0; }
-  .input .toggle.round input + label {
-    border-radius: 20px; }
-    .input .toggle.round input + label:before {
-      border-radius: 20px; }
+      height: 35.5px;
+      width: 35.5px;
+      border-radius: 50%;
+      background: white; }
+  .input.toggle input:checked + label {
+    background: #00A6ED; }
+    .input.toggle input:checked + label:before {
+      left: unset;
+      right: 1px; }
 
 .section, section {
   padding: 1em;

@@ -16,7 +16,6 @@
   }
 
   input{
-    padding: 15px;
     font: inherit;
     color: inherit;
 
@@ -61,39 +60,25 @@
 
   // ANIMATED -> Google Style
   &.animated{
+    padding-top: 20px;
+    position: relative;
     input{
-      @extend %animated-input-props;
+      border:none;
       &+label{
-        line-height: 15px;
-        font-size: 12px;
-        &:after{
-          @extend %pseudo;
-          display: block;
-          background : currentColor;
-          height: 2px;
-          width: 100%;
-        }
-      }
-      //disabled animated
-      &:disabled{
-        &+label{
-          color: grey;
-          background:rgba(black,.15);
-        }
+        position: absolute;
+        line-height: $input-height - 15px;
+        padding-left: 15px;
+        border-bottom: 2px solid currentColor;
+        width: 100%;
+        left: 0;
+        padding-left: 5px;
       }
     }
     //active input
     &.has-data input,
     & input:focus{
       &+label{
-        font-size: 15px;
-        line-height: $input-height;
-        position: absolute;
-        top: 0;
-
-        &:after{
-          background: $accent-color;
-        }
+        line-height: $input-height * 2;
       }
     }
 
@@ -145,8 +130,13 @@
     input,label{
       display: none;
     }
+
     textarea,label,span{
       display: block;
+    }
+
+    label{
+      @extend %label-props;
     }
 
     textarea{
@@ -172,9 +162,11 @@
 
 
   // SELECT
-  .select{
+  &.select{
     display: inline-block;
+    position: relative;
     select{
+      position: relative;
       @extend %select-props;
       outline: none;
       background: transparent;
@@ -185,13 +177,21 @@
 
     &:after{
       @extend %pseudo;
-      @extend %custom-select-arrow;
+      border: 2px solid red;
+      position: absolute;
+      right: $input-height - 35px;
+      top: 50%;
+      transform: translateY(-25%);
+      margin-top: 2px;
+      border: 10px solid transparent;
+      border-top-color: rgba(black,.25);
     }
     &.c{
       select{
         text-align: center;
       }
     }
+
     //multiple select
     &.group{
       display: flex;
@@ -204,15 +204,23 @@
 
   //PILLS
   // pill group
-  .pills{
+  &.pills{
+    flex-direction: row;
     .pill{
       @extend %selectable-label;
       vertical-align: middle;
       display: inline-block;
+      margin: 5px;
       input{
         &+label{
           padding: 0 1.5em;
           @extend %input-props;
+        }
+
+        &:checked{
+          &+label{
+            @extend %pills-active;
+          }
         }
       }
     }
@@ -220,43 +228,56 @@
     &.c{
       text-align: center;
     }
+
+    //block-level
+    &.b{
+      flex-direction: column;
+
+      .pill{
+        label{
+          width: 100%;
+          line-height: normal;
+          height: auto;
+          padding: 10px;
+        }
+      }
+    }
   }
 
 
   // TOGGLE
-  .toggle{
+  &.toggle{
     @extend %selectable-label;
+    $toggle-rad: $input-height * 3 / 4;
     input{
       &+label{
+        @extend %pseudo;
         position: relative;
-        width: $input-height * 2.5;
-        background: $accent-color;
+        height: $toggle-rad;
+        width: $toggle-rad * 2;
+        background: rgba(black,.15);
+        border-radius: $toggle-rad / 2;
+        transition: all 0.5s ease;
         &:before{
+          right: auto;
           @extend %pseudo;
           position: absolute;
-          left: 0;
+          left: 1px;
+          top: 1px;
           right: unset;
-          height: $input-height;
-          width: $input-height;
+          height: $toggle-rad - 2px;
+          width: $toggle-rad - 2px;
+          border-radius: 50%;
+          background: white;
         }
       }
 
       &:checked{
         &+label{
+          background: $accent-color;
           &:before{
             left: unset;
-            right: 0;
-          }
-        }
-      }
-    }
-    //round toggles
-    &.round{
-      input{
-        &+label{
-          border-radius: $input-height / 2;
-          &:before{
-            border-radius: $input-height / 2;
+            right: 1px;
           }
         }
       }

@@ -1,14 +1,18 @@
 %input-props{
-  border: 2px solid;
+  border: 2px solid grey;
   background: none;
   border-radius: 2px;
   height: $input-height;
   line-height: $input-height;
+  padding: 0 5px;
   outline: none;
 }
 
 %label-props{
   color: grey;
+  text-align: left;
+  font-size: 15px;
+  padding: 5px;
 }
 
 %input-helptext{
@@ -40,11 +44,23 @@
   min-height: 100px;
   max-width: 100%;
   padding: .5em;
+  line-height: normal;
+  font: inherit;
+  font-size: 16px;
 }
 
 %select-props{
-  display: block;
   @extend %input-props;
+  display: block;
+  width: 100%;
+  height: $input-height;
+  padding: 0 20px;
+  padding-right: $input-height
+}
+
+%pills-active{
+  @extend %accent-colors-invert;
+  border-color: $accent-color;
 }
 
 %hide-select-arrow{

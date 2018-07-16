@@ -86,10 +86,22 @@
 
   // LARGE MARGIN
   &.large-margin{
-    @include col-x(2%);
-    @include x-y(2%);
+    $large-margin: 3%;
+    @include col-x($large-margin);
+    @include x-y($large-margin);
     >.col{
-      margin: 2%;
+      margin: $large-margin;
+    }
+  }
+
+  //MOBILE MODE
+  @include mobile-only{
+    &:not(.strict){
+      >.col,>[class*='col-']{
+        width: 98% !important;
+        margin-left: 1%;
+        margin-right: 1%;
+      }
     }
   }
 
@@ -97,30 +109,38 @@
 
   // 0-480
   @include mobile-small(){
-    @include col-screen-x(1.5%,"ms");
-    &.no-margin{
-      @include col-screen-x(0%,"ms");
+    &:not(.strict){
+      @include col-screen-x(1.5%,"ms");
+      &.no-margin{
+        @include col-screen-x(0%,"ms");
+      }
     }
   }
   // 481-768
   @include mobile-large(){
-    @include col-screen-x(1.5%,"ml");
-    &.no-margin{
-      @include col-screen-x(0,"ml");
+    &:not(.strict){
+      @include col-screen-x(1.5%,"ml");
+      &.no-margin{
+        @include col-screen-x(0,"ml");
+      }
     }
   }
   // 769-1023
   @include tablet(){
-    @include col-screen-x(1.5%,"tl");
-    &.no-margin{
-      @include col-screen-x(0,"tl");
+    &:not(.strict){
+      @include col-screen-x(1.5%,"tl");
+      &.no-margin{
+        @include col-screen-x(0,"tl");
+      }
     }
   }
   // 1024-1215
-  @include desktop(){
-    @include col-screen-x(1.5%,"dt");
-    &.no-margin{
-      @include col-screen-x(0,"dt");
+  @include desktop-only(){
+    &:not(.strict){
+      @include col-screen-x(1.5%,"dt");
+      &.no-margin{
+        @include col-screen-x(0,"dt");
+      }
     }
   }
 

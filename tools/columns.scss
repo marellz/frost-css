@@ -35,7 +35,7 @@ $total-columns : 12;
   }
   @for $n from 1 through $total-columns{
     .col-#{$screen}-#{$n}{
-        width: calculate-width($total-columns,$n,$margin);
+        width: calculate-width($total-columns,$n,$margin) !important;
     }
   }
 }

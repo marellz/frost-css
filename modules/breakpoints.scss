@@ -6,42 +6,42 @@
 .tablet-only,
 .touch-only,
 .desktop-only{
-  display: none;
+  display: none !important;
 }
 
 
 @include mobile-small{
   .mobile-small-only{
-    display: initial;
+    display: initial !important;
   }
 }
 
 @include mobile-large{
   .mobile-large-only{
-    display: initial;
+    display: initial !important;
   }
 }
 
 @include mobile-only{
   .mobile-only{
-    display: initial;
+    display: initial !important;
   }
 }
 
 @include tablet{
   .tablet-only{
-    display: initial;
+    display: initial !important;
   }
 }
 
 @include touch-only{
   .touch-only{
-    display: initial;
+    display: initial !important;
   }
 }
 
 @include desktop-only{
   .desktop-only{
-    display: initial;
+    display: initial !important;
   }
 }

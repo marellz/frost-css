@@ -27,6 +27,7 @@ button.close:after, .button.close:after, button.close:before, .button.close:befo
 
 button, .button {
   display: inline-block;
+  vertical-align: middle;
   text-align: center !important;
   padding: 0 1.5em;
   line-height: 35px;
@@ -1254,6 +1255,8 @@ button, .button {
     border: 1px solid currentColor;
     background: inherit;
     color: #00A6ED; }
+    button.s.no-outline, .button.s.no-outline {
+      border: none; }
   button:disabled, .button:disabled {
     line-height: 35px;
     border: none;

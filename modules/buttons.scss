@@ -24,7 +24,11 @@ button,.button{
     line-height: $button-height - (2 * $button-border-width);
     border: $button-border-width solid currentColor;
     background: inherit;
-    color: $accent-color
+    color: $accent-color;
+
+    &.no-outline{
+      border: none;
+    }
   }
 
   // disabled

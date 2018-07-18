@@ -1,5 +1,18 @@
 @import "../mixins/menus.scss";
 
+ul{
+  display: block;
+  li{
+    list-style-type: none;
+  }
+}
+
+.c{
+  >ul{
+    display: inline-block;
+  }
+}
+
 .menu{
   .-menu{
     text-align: inherit;

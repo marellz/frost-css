@@ -284,3 +284,12 @@
     }
   }
 }
+
+//DO FIELDSET
+fieldset{
+  border-style: solid;
+  padding: 1.5em 1em;
+  legend{
+    display: block;
+  }
+}

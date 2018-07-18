@@ -17,6 +17,13 @@ $background-dark : #333;
 //accent
 $accent-color: #00A6ED;
 
+//verify palette
+$palette : global-variable-exists(color1);
+
+//set colors as per palette
+@if $palette {
+  $accent-color : $color3;
+}
 
 //fonts
 $font-family : 'Open Sans', serif;

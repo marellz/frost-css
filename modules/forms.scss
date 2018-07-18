@@ -206,6 +206,7 @@
   // pill group
   &.pills{
     flex-direction: row;
+    flex-wrap: wrap;
     .pill{
       @extend %selectable-label;
       vertical-align: middle;

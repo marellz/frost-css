@@ -43,9 +43,12 @@
     -moz-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    .col{
+    >.col{
       width: 100%;
       float: none;
+    }
+    &.c,&.-c{
+      justify-content: center;
     }
   }
 

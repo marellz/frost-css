@@ -223,9 +223,11 @@ button.loading, .button.loading {
     -moz-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column; }
-    .row.flex .col {
+    .row.flex > .col {
       width: 100%;
       float: none; }
+    .row.flex.c, .row.flex.-c {
+      justify-content: center; }
   .row > .col, .row > [class*="col-"] {
     float: left;
     display: block; }

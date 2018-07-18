@@ -1,0 +1,9 @@
+@mixin hide{
+    visibility: hidden;
+    opacity: 0;
+}
+
+@mixin show{
+    visibility: visible;
+    opacity: 1;
+}

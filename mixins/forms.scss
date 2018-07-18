@@ -1,0 +1,17 @@
+@mixin placeholder{
+    input::-webkit-input-placeholder{@content;}
+    input::-moz-placeholder{@content;}
+    input:-moz-placeholder{@content;}
+    input:-ms-placeholder{@content;}
+    textarea::-webkit-input-placeholder{@content;}
+    textarea::-moz-placeholder{@content;}
+    textarea:-moz-placeholder{@content;}
+    textarea:-ms-placeholder{@content;}
+}
+
+@mixin input-placeholder{
+  input::-webkit-input-placeholder{@content;}
+  input::-moz-placeholder{@content;}
+  input:-moz-placeholder{@content;}
+  input:-ms-placeholder{@content;}
+}

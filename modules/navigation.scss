@@ -29,19 +29,19 @@
 
       transition: all 3.5s ease;
     }
-    .round{
+    &.round{
       &,&:before,&:after{
         border-radius: 2px;
       }
     }
 
-    .ham{
+    &.ham{
       &,&:before,&:after{
         width: 22px;
       }
     }
 
-    .double{
+    &.double{
       height: 0;
       // NOTE: verify if restating height is required
       &:before,&:after{

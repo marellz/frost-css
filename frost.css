@@ -1385,8 +1385,7 @@ hr {
       display: flex;
       flex-direction: row; }
   .input.pills {
-    flex-direction: row;
-    flex-wrap: wrap; }
+    display: block; }
     .input.pills .pill {
       vertical-align: middle;
       display: inline-block;
@@ -1723,6 +1722,12 @@ p.typ {
   .tab-wrapper .tabs .tabs-list.c, .tab-wrapper .tabs ul.c {
     text-align: center; }
   .tab-wrapper .tabs .tabs-list .tabs, .tab-wrapper .tabs .tabs-list li, .tab-wrapper .tabs ul .tabs, .tab-wrapper .tabs ul li {
+    -khtml-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
     display: inline-block;
     padding: 0 1em;
     float: left;
@@ -1772,3 +1777,5 @@ p.typ {
     padding: 1em 2em;
     font-size: 15px;
     line-height: 170%; }
+
+/*# sourceMappingURL=frost.css.map */

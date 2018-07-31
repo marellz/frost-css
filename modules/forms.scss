@@ -127,6 +127,7 @@
 
   //TEXTAREA
   &.textarea{
+    max-width: none;
     input,label{
       display: none;
     }
@@ -194,6 +195,7 @@
 
     //multiple select
     &.group{
+      max-width: none;
       display: flex;
       flex-direction: row;
       select{
@@ -206,6 +208,7 @@
   // pill group
   &.pills{
     display: block;
+    max-width: none;
     .pill{
       @extend %selectable-label;
       vertical-align: middle;

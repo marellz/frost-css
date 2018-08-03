@@ -54,6 +54,9 @@
       -ms-flex-pack: center;
       justify-content: center;
     }
+    &.wrap{
+      flex-wrap: wrap;
+    }
   }
 
   // COLS

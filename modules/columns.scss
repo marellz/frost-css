@@ -22,7 +22,7 @@
       float: none;
       vertical-align: top;
       /* NOTE: prevent child elements from adopting
-              the text align property
+      the text align property
       */
       text-align: initial !important;
 
@@ -36,18 +36,22 @@
     display: -moz-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -moz-box-orient: vertical;
+    -webkit-flex-direction: row;
+    -moz-box-orient: horizontal;
     -moz-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
+    -ms-flex-direction: row;
+    flex-direction: row;
     >.col{
       width: 100%;
       float: none;
     }
     &.c,&.-c{
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -moz-box-pack: center;
+      -ms-flex-pack: center;
       justify-content: center;
     }
   }

@@ -1308,6 +1308,7 @@ hr {
   .input .help-text {
     display: block; }
   .input > input, .input.textarea > textarea {
+    color: inherit;
     border: 2px solid currentColor; }
   .input input {
     font: inherit;
@@ -1788,5 +1789,3 @@ p.typ {
     padding: 1em 2em;
     font-size: 15px;
     line-height: 170%; }
-
-/*# sourceMappingURL=frost.css.map */

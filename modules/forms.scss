@@ -18,6 +18,7 @@
   //global
   & > input,
   &.textarea > textarea {
+    color: inherit;
     border: $border-props;
   }
 

@@ -1,5 +1,5 @@
 %input-props{
-  border: 2px solid grey;
+  border: 2px solid currentColor;
   background: none;
   border-radius: 2px;
   height: $input-height;
@@ -9,7 +9,7 @@
 }
 
 %label-props{
-  color: grey;
+  color: inherit;
   text-align: left;
   font-size: 15px;
   padding: 5px;

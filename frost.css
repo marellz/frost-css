@@ -97,7 +97,6 @@ button.loading, .button.loading {
   100% {
     transform: rotate(360deg); } }
 .input.textarea textarea, .input.select select, .input input, .input.file input[type='file'] + label, .input.file input[type='image'] + label, .input.pills .pill input + label {
-  border: 2px solid grey;
   background: none;
   border-radius: 2px;
   height: 50px;
@@ -106,7 +105,7 @@ button.loading, .button.loading {
   outline: none; }
 
 .input input + label, .input.textarea label {
-  color: grey;
+  color: inherit;
   text-align: left;
   font-size: 15px;
   padding: 5px; }
@@ -207,7 +206,7 @@ button.loading, .button.loading {
       float: none;
       vertical-align: top;
       /* NOTE: prevent child elements from adopting
-              the text align property
+      the text align property
       */
       text-align: initial !important; }
   .row.flex {
@@ -216,18 +215,24 @@ button.loading, .button.loading {
     display: -moz-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -moz-box-orient: vertical;
+    -webkit-flex-direction: row;
+    -moz-box-orient: horizontal;
     -moz-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column; }
+    -ms-flex-direction: row;
+    flex-direction: row; }
     .row.flex > .col {
       width: 100%;
       float: none; }
     .row.flex.c, .row.flex.-c {
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -moz-box-pack: center;
+      -ms-flex-pack: center;
       justify-content: center; }
+    .row.flex.wrap {
+      flex-wrap: wrap; }
   .row > .col, .row > [class*="col-"] {
     float: left;
     display: block; }
@@ -1302,6 +1307,8 @@ hr {
     background: none; }
   .input .help-text {
     display: block; }
+  .input > input, .input.textarea > textarea {
+    border: 2px solid currentColor; }
   .input input {
     font: inherit;
     color: inherit; }
@@ -1353,16 +1360,18 @@ hr {
     .input.file.has-file input + label {
       background: #00A6ED;
       color: white; }
-  .input.textarea input, .input.textarea label {
-    display: none; }
-  .input.textarea textarea, .input.textarea label, .input.textarea span {
-    display: block; }
-  .input.textarea.h textarea {
-    resize: horizontal; }
-  .input.textarea.v textarea {
-    resize: vertical; }
-  .input.textarea.no-resize textarea {
-    resize: none; }
+  .input.textarea {
+    max-width: none; }
+    .input.textarea input, .input.textarea label {
+      display: none; }
+    .input.textarea textarea, .input.textarea label, .input.textarea span {
+      display: block; }
+    .input.textarea.h textarea {
+      resize: horizontal; }
+    .input.textarea.v textarea {
+      resize: vertical; }
+    .input.textarea.no-resize textarea {
+      resize: none; }
   .input.select {
     display: inline-block;
     position: relative; }
@@ -1382,10 +1391,12 @@ hr {
     .input.select.c select {
       text-align: center; }
     .input.select.group {
+      max-width: none;
       display: flex;
       flex-direction: row; }
   .input.pills {
-    display: block; }
+    display: block;
+    max-width: none; }
     .input.pills .pill {
       vertical-align: middle;
       display: inline-block;

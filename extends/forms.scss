@@ -1,5 +1,5 @@
 %input-props{
-  border: 2px solid currentColor;
+  border: $border-props;
   background: none;
   border-radius: 2px;
   height: $input-height;
@@ -39,6 +39,7 @@
 }
 
 %textarea-props{
+  border: $border-props;
   @extend %input-props;
   width: 100%;
   min-height: 100px;

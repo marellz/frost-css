@@ -3,15 +3,22 @@
   .tabs{
     .tabs-list,ul{
       overflow: auto;
+      display: flex;
+      flex-direction: row;
       &.c{
-        text-align: center;
+        align-items: center;
+      }
+      &.tab-wrap{
+        flex-wrap: nowrap;
       }
       .tabs,li{
         @include no-select;
-        display: inline-block;
         padding: 0 1em;
-        float: left;
         cursor: pointer;
+
+        > a{
+          display: block
+        }
 
         //sizing
         line-height: 50px;

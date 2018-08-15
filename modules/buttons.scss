@@ -7,8 +7,8 @@
 }
 
 button,.button{
+  @include no-select;
   @extend %button;
-
   @if($button-border-radius){
     border-radius: $button-border-radius;
   }
@@ -54,5 +54,13 @@ button,.button{
     @extend %loading-button;
   }
 
-
+  //default
+  &.default{
+    background: transparent;
+    padding: .25em;
+    color: inherit;
+    min-width: unset;
+    line-height: initial;
+    height: auto;
+  }
 }

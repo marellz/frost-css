@@ -45,9 +45,20 @@ html,body{
 }
 
 
-.hide{
+// general rules
+
+.no-show{
   @extend %hide;
-  &.--a{
-    display: none
-  }
+}
+
+.hide{
+  display: none;
+}
+
+.no-select{
+  @include no-select;
+}
+
+.no-pointer{
+  pointer-events: none;
 }

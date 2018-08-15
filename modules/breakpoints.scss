@@ -12,36 +12,36 @@
 
 @include mobile-small{
   .mobile-small-only{
-    display: initial !important;
+    display: initiat;
   }
 }
 
 @include mobile-large{
   .mobile-large-only{
-    display: initial !important;
+    display: initial;
   }
 }
 
 @include mobile-only{
   .mobile-only{
-    display: initial !important;
+    display: initial;
   }
 }
 
 @include tablet{
   .tablet-only{
-    display: initial !important;
+    display: initial;
   }
 }
 
 @include touch-only{
   .touch-only{
-    display: initial !important;
+    display: initial;
   }
 }
 
 @include desktop-only{
   .desktop-only{
-    display: initial !important;
+    display: initial;
   }
 }

@@ -6,7 +6,7 @@
   background: #00A6ED;
   color: white; }
 
-.input.pills .pill input, .input.toggle input, .hide, .input.file input, .input.file input + label, .input.file input[type='file'], .input.file input[type='image'], .modal, .menu.accordion ul > li > ul, .menu.dropdown .dropdown-menu {
+.input.pills .pill input, .input.toggle input, .no-show, .input.file input, .input.file input + label, .input.file input[type='file'], .input.file input[type='image'], .modal, .menu.accordion ul > li > ul, .menu.dropdown .dropdown-menu {
   visibility: hidden;
   opacity: 0; }
 
@@ -1229,8 +1229,19 @@ html, body {
     flex: 1 0 auto;
     position: relative; }
 
-.hide.--a {
+.hide {
   display: none; }
+
+.no-select {
+  -khtml-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  user-select: none; }
+
+.no-pointer {
+  pointer-events: none; }
 
 .mobile-small-only,
 .mobile-large-only,
@@ -1242,22 +1253,22 @@ html, body {
 
 @media screen and (max-width: 480px) {
   .mobile-small-only {
-    display: initial !important; } }
+    display: initiat; } }
 @media screen and (max-width: 768px) and (min-width: 480px) {
   .mobile-large-only {
-    display: initial !important; } }
+    display: initial; } }
 @media screen and (max-width: 768px) {
   .mobile-only {
-    display: initial !important; } }
+    display: initial; } }
 @media screen and (max-width: 1023px) and (min-width: 769px) {
   .tablet-only {
-    display: initial !important; } }
+    display: initial; } }
 @media screen and (max-width: 1023px) {
   .touch-only {
-    display: initial !important; } }
+    display: initial; } }
 @media screen and (min-width: 1023px) {
   .desktop-only {
-    display: initial !important; } }
+    display: initial; } }
 .buttons {
   text-align: center; }
   .buttons button, .buttons .button {
@@ -1265,6 +1276,12 @@ html, body {
     vertical-align: middle; }
 
 button, .button {
+  -khtml-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
   border-radius: 3px; }
   button, .button {
     background: #00A6ED;
@@ -1286,6 +1303,13 @@ button, .button {
     color: white; }
     button.close.s, .button.close.s {
       color: #00A6ED; }
+  button.default, .button.default {
+    background: transparent;
+    padding: .25em;
+    color: inherit;
+    min-width: unset;
+    line-height: initial;
+    height: auto; }
 
 a {
   text-decoration: inherit;
@@ -1404,7 +1428,13 @@ hr {
       margin: 5px; }
       .input.pills .pill input + label {
         padding: 0 1.5em;
-        height: auto; }
+        height: auto;
+        -khtml-user-select: none;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        -moz-user-select: none;
+        user-select: none; }
     .input.pills.c {
       text-align: center; }
     .input.pills.b {
@@ -1730,9 +1760,13 @@ p.typ {
     line-height: 160%; }
 
 .tab-wrapper .tabs .tabs-list, .tab-wrapper .tabs ul {
-  overflow: auto; }
+  overflow: auto;
+  display: flex;
+  flex-direction: row; }
   .tab-wrapper .tabs .tabs-list.c, .tab-wrapper .tabs ul.c {
-    text-align: center; }
+    align-items: center; }
+  .tab-wrapper .tabs .tabs-list.tab-wrap, .tab-wrapper .tabs ul.tab-wrap {
+    flex-wrap: nowrap; }
   .tab-wrapper .tabs .tabs-list .tabs, .tab-wrapper .tabs .tabs-list li, .tab-wrapper .tabs ul .tabs, .tab-wrapper .tabs ul li {
     -khtml-user-select: none;
     -webkit-touch-callout: none;
@@ -1740,11 +1774,13 @@ p.typ {
     -ms-user-select: none;
     -moz-user-select: none;
     user-select: none;
-    display: inline-block;
     padding: 0 1em;
-    float: left;
+    flex-basis: 80px;
+    text-align: center;
     cursor: pointer;
     line-height: 50px; }
+    .tab-wrapper .tabs .tabs-list .tabs > a, .tab-wrapper .tabs .tabs-list li > a, .tab-wrapper .tabs ul .tabs > a, .tab-wrapper .tabs ul li > a {
+      display: block; }
     .tab-wrapper .tabs .tabs-list .tabs.is-active, .tab-wrapper .tabs .tabs-list li.is-active, .tab-wrapper .tabs ul .tabs.is-active, .tab-wrapper .tabs ul li.is-active {
       color: #00A6ED;
       border-bottom: 2px solid currentColor; }

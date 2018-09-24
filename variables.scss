@@ -1,34 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
 @import 'tools/colors.scss';
 
-
-//event colors
-/*$red: #F6511D;
-$green :  #12BC3A;
-$amber : #FFB400;*/
-
-//base colors
-$text-color-base: #000;
-$text-color-light: #fff;
-
-//background
-$background-base : #fff;
-$background-dark : #333;
-
-//accent
-$accent-color: #00A6ED;
-
-//verify palette
-$palette : global-variable-exists(color1);
-
-//set colors as per palette
-@if $palette {
-  $accent-color : $color3;
-}
+$accent-color: $blue;
 
 //fonts
 $font-family : 'Open Sans', serif;
-
 
 //forms
 $input-height: 50px;

@@ -3,6 +3,10 @@
     opacity: 0;
 }
 
+@mixin br{
+  border: 1px solid red;
+}
+
 @mixin show{
     visibility: visible;
     opacity: 1;

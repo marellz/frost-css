@@ -1,6 +1,5 @@
 index.html
-frost.css
-frost.min.css
+*.css
 frost.css.map
 .sass-cache
 bash-script.js

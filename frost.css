@@ -3,22 +3,17 @@
   color: #1c77c3;
 }
 
-.input.pills .pill input:checked + label {
-  background: #1c77c3;
-  color: white;
-}
-
-.input.pills .pill input, .input.toggle input, .no-show, .input.file input, .input.file input + label, .input.file input[type='file'], .input.file input[type='image'], .modal, .menu.accordion ul > li > ul, .menu.dropdown .dropdown-menu {
+.no-show, .modal, .menu.accordion ul > li > ul, .menu.dropdown .dropdown-menu {
   visibility: hidden;
   opacity: 0;
 }
 
-.input.file input[type='file'] + label, .input.file input[type='image'] + label, .modal.is-active, .menu.accordion ul > li:hover > ul, .menu.dropdown .dropdown-button:hover + .dropdown-menu {
+.modal.is-active, .menu.accordion ul > li:hover > ul, .menu.dropdown .dropdown-button:hover + .dropdown-menu {
   visibility: visible;
   opacity: 1;
 }
 
-button.close:after, button.close:before, .button.close:after, .button.close:before, button.loading:before, .button.loading:before, .input.select:after, .input.toggle input + label, .input.toggle input + label:before {
+button.close:after, button.close:before, .button.close:after, .button.close:before, button.loading:before, .button.loading:before {
   content: '';
   display: block;
 }
@@ -34,66 +29,6 @@ button.close:after, button.close:before, .button.close:after, .button.close:befo
 
 .modal {
   position: fixed;
-}
-
-.input.textarea textarea, .input.select select, .input input, .input.file input[type='file'] + label, .input.file input[type='image'] + label, .input.pills .pill input + label {
-  background: none;
-  border-radius: 2px;
-  height: 50px;
-  line-height: 50px;
-  padding: 0 5px;
-  outline: none;
-}
-
-.input input + label, .input.textarea label {
-  color: inherit;
-  text-align: left;
-  font-size: 15px;
-  padding: 5px;
-}
-
-.input:before {
-  display: block;
-  content: attr(data-text);
-}
-
-.input.pills .pill input, .input.toggle input {
-  height: 0;
-  width: 0;
-  font-size: 0;
-}
-.input.pills .pill input + label, .input.toggle input + label {
-  display: inline-block;
-}
-
-.input.textarea textarea {
-  width: 100%;
-  min-height: 100px;
-  max-width: 100%;
-  padding: .5em;
-  line-height: normal;
-  font: inherit;
-  font-size: 16px;
-}
-
-.input.select select {
-  display: block;
-  width: 100%;
-  height: 50px;
-  padding: 0 20px;
-  padding-right: 50px;
-}
-
-.input.pills .pill input:checked + label {
-  border-color: #1c77c3;
-}
-
-.input.select select {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-}
-.input.select select::-ms-expand {
-  display: none;
 }
 
 .menu.flat ul li, .menu.header-menu ul li {
@@ -1878,7 +1813,8 @@ hr {
   flex-direction: column-reverse;
   position: relative;
   min-width: 200px;
-  max-width: 450px;
+  /*
+  */
 }
 .input input, .input label, .input span, .input i {
   display: block;
@@ -1889,11 +1825,21 @@ hr {
 }
 .input > input, .input.textarea > textarea {
   color: inherit;
-  border: 2px solid currentColor;
 }
 .input input {
   font: inherit;
   color: inherit;
+  height: 50px;
+  outline: none;
+  border-radius: 2px;
+  padding: 0 5px;
+  background: transparent;
+  border: 1px solid currentColor;
+}
+.input input + label {
+  text-align: left;
+  font-size: 15px;
+  padding: 5px;
 }
 .input input:disabled {
   color: gray;
@@ -1906,6 +1852,11 @@ hr {
   background: none;
 }
 .input:before {
+  text-align: left;
+  font-size: 15px;
+  padding: 5px;
+  display: block;
+  content: attr(data-text);
   line-height: 17px;
   font-size: 13px;
   padding-left: 20px;
@@ -1917,29 +1868,38 @@ hr {
   color: #db222a;
 }
 .input.animated {
-  padding-top: 20px;
   position: relative;
 }
 .input.animated input {
-  border: none;
+  height: 60px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
 }
 .input.animated input + label {
   position: absolute;
-  line-height: 35px;
-  padding-left: 15px;
-  border-bottom: 2px solid currentColor;
-  width: 100%;
-  left: 0;
-  padding-left: 5px;
+  top: 0;
+  height: 65px;
+  outline: none;
+  line-height: 50px;
 }
-.input.animated.has-data input + label, .input.animated input:focus + label {
-  line-height: 100px;
+.input.animated.has-data input + label,
+.input.animated input:focus + label {
+  transform: translateY(-5px);
+  font-size: 10px;
+  line-height: 11px;
 }
-.input.animated input, .input.animated label, .input.animated label:after {
-  transition: all 0.25s ease;
+.input.animated label {
+  transition: all 0.2s ease;
 }
-.input.file {
-  display: inline-block;
+.input.file input {
+  visibility: hidden;
+  opacity: 0;
+}
+.input.file input + label {
+  visibility: hidden;
+  opacity: 0;
 }
 .input.file input[type='file'], .input.file input[type='image'] {
   border: none;
@@ -1948,10 +1908,24 @@ hr {
   font-size: 0;
 }
 .input.file input[type='file'] + label, .input.file input[type='image'] + label {
+  -khtml-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  visibility: visible;
+  opacity: 1;
+  border-radius: 2px;
+  padding: 0 5px;
+  background: transparent;
+  border: 1px solid currentColor;
+  height: 50px;
+  outline: none;
+  line-height: 50px;
   text-align: center !important;
-  padding: 0;
   overflow: hidden;
-  border-radius: 5px;
+  padding: 0;
 }
 .input.file.has-file input + label {
   background: #1c77c3;
@@ -1960,11 +1934,33 @@ hr {
 .input.textarea {
   max-width: none;
 }
-.input.textarea input, .input.textarea label {
+.input.textarea input {
   display: none;
 }
 .input.textarea textarea, .input.textarea label, .input.textarea span {
   display: block;
+}
+.input.textarea label {
+  text-align: left;
+  font-size: 15px;
+  padding: 5px;
+}
+.input.textarea textarea {
+  border-radius: 2px;
+  padding: 0 5px;
+  background: transparent;
+  border: 1px solid currentColor;
+  width: 100%;
+  min-height: 100px;
+  max-width: 100%;
+  padding: .5em;
+  line-height: normal;
+  font: inherit;
+  font-size: 16px;
+  outline: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }
 .input.textarea.h textarea {
   resize: horizontal;
@@ -1978,21 +1974,40 @@ hr {
 .input.select {
   display: inline-block;
   position: relative;
+  min-width: unset;
 }
 .input.select select {
   position: relative;
+  height: 40px;
+  outline: none;
+  border-radius: 2px;
+  padding: 0 5px;
+  background: transparent;
+  border: 1px solid currentColor;
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding: 0 20px;
+  padding-right: 40px;
   outline: none;
   background: transparent;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  z-index: 5;
+}
+.input.select select::-ms-expand {
+  display: none;
 }
 .input.select:after {
-  border: 2px solid red;
+  z-index: 1;
+  content: '';
+  display: block;
   position: absolute;
   right: 15px;
   top: 50%;
-  transform: translateY(-25%);
-  margin-top: 2px;
-  border: 10px solid transparent;
-  border-top-color: rgba(0, 0, 0, 0.25);
+  transform: translateY(1px);
+  border: 7px solid transparent;
+  border-top-color: rgba(0, 0, 0, 0.45);
 }
 .input.select.c select {
   text-align: center;
@@ -2003,26 +2018,50 @@ hr {
   flex-direction: row;
 }
 .input.pills {
-  display: block;
   max-width: none;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  position: relative;
 }
-.input.pills .pill {
-  vertical-align: middle;
-  display: inline-block;
-  margin: 5px;
+.input.pills input {
+  height: 0px;
+  width: 0px;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
 }
-.input.pills .pill input + label {
-  padding: 0 1.5em;
-  height: auto;
+.input.pills input + label {
+  border-radius: 2px;
+  padding: 0 5px;
+  background: transparent;
+  border: 1px solid currentColor;
+  height: 40px;
+  outline: none;
   -khtml-user-select: none;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -ms-user-select: none;
   -moz-user-select: none;
   user-select: none;
+  margin: 5px;
+  padding: 0 1em;
+  height: 40px;
+  line-height: 38px;
+}
+.input.pills input:checked + label {
+  border-color: #1c77c3;
+  background: #1c77c3;
+  color: white;
+}
+.input.pills .pill {
+  display: inline-block;
+  margin: 5px;
+}
+.input.pills .pill input + label {
+  margin: 0;
 }
 .input.pills.c {
-  text-align: center;
+  justify-content: center;
 }
 .input.pills.b {
   flex-direction: column;
@@ -2033,22 +2072,52 @@ hr {
   height: auto;
   padding: 10px;
 }
+.input.toggle {
+  margin: 15px 0;
+  flex-direction: row;
+  align-items: center;
+}
+.input.toggle input {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  font-size: 0;
+}
+.input.toggle .toggle-label {
+  display: inline-block;
+  line-height: 40px;
+  vertical-align: middle;
+  -khtml-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
 .input.toggle input + label {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
   position: relative;
-  height: 37.5px;
-  width: 75px;
+  height: 40px;
+  width: 80px;
+  border-radius: 20px;
   background: rgba(0, 0, 0, 0.15);
-  border-radius: 18.75px;
   transition: all 0.5s ease;
 }
 .input.toggle input + label:before {
+  height: 36px;
+  width: 36px;
+  left: 2px;
+  top: 2px;
+}
+.input.toggle input + label:before {
   right: auto;
+  content: '';
+  display: block;
   position: absolute;
-  left: 1px;
-  top: 1px;
   right: unset;
-  height: 35.5px;
-  width: 35.5px;
   border-radius: 50%;
   background: white;
 }
@@ -2057,7 +2126,37 @@ hr {
 }
 .input.toggle input:checked + label:before {
   left: unset;
-  right: 1px;
+  right: 2px;
+}
+.input.toggle.large input + label {
+  height: 50px;
+  width: 100px;
+  border-radius: 25px;
+}
+.input.toggle.large input + label:before {
+  height: 44px;
+  width: 44px;
+  left: 3px;
+  top: 3px;
+}
+.input.toggle.large input:checked + label:before {
+  left: unset;
+  right: 3px;
+}
+.input.toggle.small input + label {
+  height: 30px;
+  width: 60px;
+  border-radius: 15px;
+}
+.input.toggle.small input + label:before {
+  height: 26px;
+  width: 26px;
+  left: 2px;
+  top: 2px;
+}
+.input.toggle.small input:checked + label:before {
+  left: unset;
+  right: 2px;
 }
 
 fieldset {

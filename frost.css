@@ -176,10 +176,13 @@ button.close:after, button.close:before, .button.close:after, .button.close:befo
   display: inline-block !important;
   float: none;
   vertical-align: top;
-  /* NOTE: prevent child elements from adopting
-  the text align property
+  /*
+    NOTE: prevent child elements from adopting
+    the text align property
   */
-  text-align: initial !important;
+}
+.row.c > .col, .row.c > .col > *, .row.c > [class*='col-'], .row.c > [class*='col-'] > *, .row.-c > .col, .row.-c > .col > *, .row.-c > [class*='col-'], .row.-c > [class*='col-'] > * {
+  text-align: initial;
 }
 .row.flex {
   display: -webkit-box;
@@ -1764,6 +1767,7 @@ button, .button {
   text-align: center !important;
   padding: 0 1.5em;
   line-height: 35px;
+  height: 35px;
   min-width: 100px;
   font-size: 15px;
   font-style: normal;
@@ -2062,6 +2066,13 @@ fieldset {
 }
 fieldset legend {
   display: block;
+}
+
+.icon.button:before, .icon.typ:before, .icon.txt:before {
+  line-height: inherit;
+  width: 40px;
+  text-align: center;
+  display: inline-block;
 }
 
 .section, section {

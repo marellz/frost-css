@@ -3,4 +3,5 @@ frost.css
 frost.css.map
 .sass-cache
 /js
+/palette-old.scss
 temp.css

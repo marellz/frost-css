@@ -21,7 +21,7 @@ $amber : #FFB400;*/
   opacity: 1;
 }
 
-button.close:after, .button.close:after, button.close:before, .button.close:before, button.loading:before, .button.loading:before, .input.select:after, .input.toggle input + label, .input.toggle input + label:before {
+button.close:after, button.close:before, .button.close:after, .button.close:before, button.loading:before, .button.loading:before, .input.select:after, .input.toggle input + label, .input.toggle input + label:before {
   content: '';
   display: block;
 }
@@ -38,6 +38,7 @@ button.close:after, .button.close:after, button.close:before, .button.close:befo
 .modal {
   position: fixed;
 }
+<<<<<<< HEAD
 
 button, .button {
   display: inline-block;
@@ -118,6 +119,9 @@ button.loading:before, .button.loading:before {
     transform: rotate(360deg);
   }
 }
+=======
+
+>>>>>>> base
 .input.textarea textarea, .input.select select, .input input, .input.file input[type='file'] + label, .input.file input[type='image'] + label, .input.pills .pill input + label {
   background: none;
   border-radius: 2px;
@@ -227,6 +231,14 @@ button.loading:before, .button.loading:before {
   transition: all 0.5s ease;
 }
 
+@keyframes loading-button {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .row {
   display: block;
   width: 100%;
@@ -250,10 +262,20 @@ button.loading:before, .button.loading:before {
   display: inline-block !important;
   float: none;
   vertical-align: top;
+<<<<<<< HEAD
   /* NOTE: prevent child elements from adopting
   the text align property
   */
   text-align: initial !important;
+=======
+  /*
+    NOTE: prevent child elements from adopting
+    the text align property
+  */
+}
+.row.c > .col, .row.c > .col > *, .row.c > [class*='col-'], .row.c > [class*='col-'] > *, .row.-c > .col, .row.-c > .col > *, .row.-c > [class*='col-'], .row.-c > [class*='col-'] > * {
+  text-align: initial;
+>>>>>>> base
 }
 .row.flex {
   display: -webkit-box;
@@ -1780,6 +1802,7 @@ html, body {
   pointer-events: none;
 }
 
+<<<<<<< HEAD
 .mobile-small-only,
 .mobile-large-only,
 .mobile-only,
@@ -1817,6 +1840,44 @@ html, body {
 @media screen and (min-width: 1023px) {
   .desktop-only {
     display: initial;
+=======
+@media screen and (min-width: 480px) {
+  .mobile-small-only {
+    display: none !important;
+  }
+}
+@media screen and (min-width: 768px) {
+  .mobile-only {
+    display: none !important;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .touch-only {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .desktop-only {
+    display: none !important;
+  }
+}
+.mobile-large-only {
+  display: none !important;
+}
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+  .mobile-large-only {
+    display: block !important;
+  }
+}
+.tablet-only {
+  display: none !important;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .tablet-only {
+    display: block !important;
+>>>>>>> base
   }
 }
 .buttons {
@@ -1834,8 +1895,30 @@ button, .button {
   -ms-user-select: none;
   -moz-user-select: none;
   user-select: none;
+<<<<<<< HEAD
   border-radius: 3px;
 }
+=======
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center !important;
+  padding: 0 1.5em;
+  line-height: 35px;
+  height: 35px;
+  min-width: 100px;
+  font-size: 15px;
+  font-style: normal;
+  font-family: inherit;
+  font-weight: normal;
+  border: none;
+  overflow: hidden;
+  outline: none;
+  border-radius: 3px;
+}
+button::-moz-focus-inner, .button::-moz-focus-inner {
+  border: 0;
+}
+>>>>>>> base
 button, .button {
   background: #00A6ED;
   color: white;
@@ -1858,13 +1941,68 @@ button:disabled, .button:disabled {
 }
 button.close, .button.close {
   color: white;
+<<<<<<< HEAD
+=======
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  content: '';
+  padding: 0;
+  min-width: unset;
+  border-radius: 50%;
+  position: relative;
+}
+button.close:after, button.close:before, .button.close:after, .button.close:before {
+  height: 3px;
+  width: 18px;
+  background: currentColor;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -9px;
+  margin-top: -1.5px;
+}
+button.close:after, .button.close:after {
+  transform: rotate(-45deg);
+}
+button.close:before, .button.close:before {
+  transform: rotate(45deg);
+}
+button.close.s, .button.close.s {
+  color: grey;
+  background: inherit;
+  border: 1px solid currentColor;
+>>>>>>> base
 }
 button.close.s, .button.close.s {
   color: #00A6ED;
 }
+<<<<<<< HEAD
 button.default, .button.default {
   background: transparent;
   padding: .25em;
+=======
+button.loading, .button.loading {
+  min-width: unset;
+  padding: 6px;
+  height: 35px;
+  line-height: 35px;
+  width: 35px;
+}
+button.loading:before, .button.loading:before {
+  display: inline-block;
+  height: 17px;
+  width: 17px;
+  border: 3px solid currentColor;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  animation: loading-button 1s linear infinite;
+}
+button.default, .button.default {
+  background: transparent;
+  padding: 0 .25em;
+>>>>>>> base
   color: inherit;
   min-width: unset;
   line-height: initial;
@@ -1920,10 +2058,17 @@ hr {
   padding-left: 20px;
 }
 .input.is-valid {
+<<<<<<< HEAD
   color: #06CE4C;
 }
 .input.is-invalid {
   color: #db222a;
+=======
+  color: #12BC3A;
+}
+.input.is-invalid {
+  color: #F6511D;
+>>>>>>> base
 }
 .input.animated {
   padding-top: 20px;
@@ -2076,6 +2221,16 @@ fieldset {
 fieldset legend {
   display: block;
 }
+<<<<<<< HEAD
+=======
+
+.icon.button:before, .icon.typ:before, .icon.txt:before {
+  line-height: inherit;
+  width: 40px;
+  text-align: center;
+  display: inline-block;
+}
+>>>>>>> base
 
 .section, section {
   padding: 1em;
@@ -2389,6 +2544,7 @@ h1.typ.thin, h1.typ .light, h1.txt.thin, h1.txt .light, h2.typ.thin, h2.typ .lig
   font-weight: 300;
 }
 h1.typ.xxl, h1.txt.xxl, h2.typ.xxl, h2.txt.xxl, h3.typ.xxl, h3.txt.xxl, h4.typ.xxl, h4.txt.xxl, h5.typ.xxl, h5.txt.xxl, h6.typ.xxl, h6.txt.xxl, span.typ.xxl, span.txt.xxl, a.typ.xxl, a.txt.xxl, i.typ.xxl, i.txt.xxl, p.typ.xxl, p.txt.xxl, legend.typ.xxl, legend.txt.xxl {
+<<<<<<< HEAD
   font-size: 4.5rem;
 }
 h1.typ.xl, h1.txt.xl, h2.typ.xl, h2.txt.xl, h3.typ.xl, h3.txt.xl, h4.typ.xl, h4.txt.xl, h5.typ.xl, h5.txt.xl, h6.typ.xl, h6.txt.xl, span.typ.xl, span.txt.xl, a.typ.xl, a.txt.xl, i.typ.xl, i.txt.xl, p.typ.xl, p.txt.xl, legend.typ.xl, legend.txt.xl {
@@ -2408,6 +2564,27 @@ h1.typ.xs, h1.txt.xs, h2.typ.xs, h2.txt.xs, h3.typ.xs, h3.txt.xs, h4.typ.xs, h4.
 }
 h1.typ.xxs, h1.txt.xxs, h2.typ.xxs, h2.txt.xxs, h3.typ.xxs, h3.txt.xxs, h4.typ.xxs, h4.txt.xxs, h5.typ.xxs, h5.txt.xxs, h6.typ.xxs, h6.txt.xxs, span.typ.xxs, span.txt.xxs, a.typ.xxs, a.txt.xxs, i.typ.xxs, i.txt.xxs, p.typ.xxs, p.txt.xxs, legend.typ.xxs, legend.txt.xxs {
   font-size: 0.75rem;
+=======
+  font-size: 85px;
+}
+h1.typ.xl, h1.txt.xl, h2.typ.xl, h2.txt.xl, h3.typ.xl, h3.txt.xl, h4.typ.xl, h4.txt.xl, h5.typ.xl, h5.txt.xl, h6.typ.xl, h6.txt.xl, span.typ.xl, span.txt.xl, a.typ.xl, a.txt.xl, i.typ.xl, i.txt.xl, p.typ.xl, p.txt.xl, legend.typ.xl, legend.txt.xl {
+  font-size: 68px;
+}
+h1.typ.l, h1.txt.l, h2.typ.l, h2.txt.l, h3.typ.l, h3.txt.l, h4.typ.l, h4.txt.l, h5.typ.l, h5.txt.l, h6.typ.l, h6.txt.l, span.typ.l, span.txt.l, a.typ.l, a.txt.l, i.typ.l, i.txt.l, p.typ.l, p.txt.l, legend.typ.l, legend.txt.l {
+  font-size: 34px;
+}
+h1.typ.n, h1.txt.n, h2.typ.n, h2.txt.n, h3.typ.n, h3.txt.n, h4.typ.n, h4.txt.n, h5.typ.n, h5.txt.n, h6.typ.n, h6.txt.n, span.typ.n, span.txt.n, a.typ.n, a.txt.n, i.typ.n, i.txt.n, p.typ.n, p.txt.n, legend.typ.n, legend.txt.n {
+  font-size: 17px;
+}
+h1.typ.s, h1.txt.s, h2.typ.s, h2.txt.s, h3.typ.s, h3.txt.s, h4.typ.s, h4.txt.s, h5.typ.s, h5.txt.s, h6.typ.s, h6.txt.s, span.typ.s, span.txt.s, a.typ.s, a.txt.s, i.typ.s, i.txt.s, p.typ.s, p.txt.s, legend.typ.s, legend.txt.s {
+  font-size: 14.45px;
+}
+h1.typ.xs, h1.txt.xs, h2.typ.xs, h2.txt.xs, h3.typ.xs, h3.txt.xs, h4.typ.xs, h4.txt.xs, h5.typ.xs, h5.txt.xs, h6.typ.xs, h6.txt.xs, span.typ.xs, span.txt.xs, a.typ.xs, a.txt.xs, i.typ.xs, i.txt.xs, p.typ.xs, p.txt.xs, legend.typ.xs, legend.txt.xs {
+  font-size: 11.05px;
+}
+h1.typ.xxs, h1.txt.xxs, h2.typ.xxs, h2.txt.xxs, h3.typ.xxs, h3.txt.xxs, h4.typ.xxs, h4.txt.xxs, h5.typ.xxs, h5.txt.xxs, h6.typ.xxs, h6.txt.xxs, span.typ.xxs, span.txt.xxs, a.typ.xxs, a.txt.xxs, i.typ.xxs, i.txt.xxs, p.typ.xxs, p.txt.xxs, legend.typ.xxs, legend.txt.xxs {
+  font-size: 8.5px;
+>>>>>>> base
 }
 h1.typ.lc, h1.txt.lc, h2.typ.lc, h2.txt.lc, h3.typ.lc, h3.txt.lc, h4.typ.lc, h4.txt.lc, h5.typ.lc, h5.txt.lc, h6.typ.lc, h6.txt.lc, span.typ.lc, span.txt.lc, a.typ.lc, a.txt.lc, i.typ.lc, i.txt.lc, p.typ.lc, p.txt.lc, legend.typ.lc, legend.txt.lc {
   text-transform: lowercase;

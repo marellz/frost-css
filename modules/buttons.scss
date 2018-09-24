@@ -1,3 +1,9 @@
+
+//buttons
+$button-height: 35px;
+$button-border-radius: 3px;
+$button-border-width: 1px;
+
 .buttons{
   text-align: center;
   button,.button{
@@ -8,7 +14,7 @@
 
 button,.button{
   @include no-select;
-  @extend %button;
+  @include button($button-height);
   @if($button-border-radius){
     border-radius: $button-border-radius;
   }
@@ -40,10 +46,13 @@ button,.button{
     cursor: not-allowed;
   }
 
+
+  // SPECIAL/EVENT BUTTONS
+
   //close
   &.close{
     color: white;
-    @extend %close-button;
+    @include close-button($button-height);
     &.s{
       color: $accent-color;
     }
@@ -51,13 +60,16 @@ button,.button{
 
   //loading
   &.loading{
-    @extend %loading-button;
+    @include loading-button($button-height);
   }
+
+
+  // NO STYLING
 
   //default
   &.default{
     background: transparent;
-    padding: .25em;
+    padding: 0 .25em;
     color: inherit;
     min-width: unset;
     line-height: initial;

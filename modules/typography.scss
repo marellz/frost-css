@@ -1,3 +1,15 @@
+//fonts
+
+$font-n : 17px;
+
+$font-xxl : $font-n * 5 ;// 4.5rem;
+$font-xl  : $font-n * 4 ;// 3.5rem;
+$font-l   : $font-n * 2 ;// 2.5rem;
+$font-s   : $font-n * .85 ;// 1rem;
+$font-xs  : $font-n * .65 ;// 0.85rem;
+$font-xxs : $font-n * .5 ;// 0.75rem;
+
+
 h1,h2,h3,h4,h5,h6,span,a,i,p,legend{
   &.typ{
     display: block;
@@ -39,8 +51,8 @@ h1,h2,h3,h4,h5,h6,span,a,i,p,legend{
     &.l{
       font-size: $font-l;
     }
-    &.m,&{
-      font-size: $font-m;
+    &.n{
+      font-size: $font-n;
     }
     &.s{
       font-size: $font-s;

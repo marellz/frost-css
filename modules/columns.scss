@@ -21,11 +21,13 @@
       display: inline-block !important;
       float: none;
       vertical-align: top;
-      /* NOTE: prevent child elements from adopting
-      the text align property
+      /*
+        NOTE: prevent child elements from adopting
+        the text align property
       */
-      text-align: initial !important;
-
+      &,>*{
+        text-align: initial;
+      }
     }
   }
 

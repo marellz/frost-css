@@ -8,14 +8,15 @@
 //extends
 @import "extends/general.scss";
 @import "extends/layouts.scss";
-@import "extends/buttons.scss";
 @import "extends/forms.scss";
 @import "extends/menus.scss";
 
 //mixins
 @import "mixins/general.scss";
+@import "mixins/buttons.scss";
 @import "mixins/breakpoints.scss";
 @import "mixins/forms.scss";
+@import "mixins/icons.scss";
 
 //tools
 @import "tools/columns.scss";

@@ -38,7 +38,7 @@
     }
     $shear-height : 3px;
     $shear-width : 18px;
-    @extend %pseudo;
+    @include pseudo;
     height: $shear-height;
     width: $shear-width;
     background: currentColor;
@@ -74,7 +74,7 @@
   line-height: $loading-height;
   width: $loading-height;
   &:before{
-    @extend %pseudo;
+    @include pseudo;
     display: inline-block;
     height: $loading-height - (2 * ($loading-gap + $loading-shear-width));
     width: $loading-height - (2 * ($loading-gap + $loading-shear-width));

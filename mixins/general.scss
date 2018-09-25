@@ -3,13 +3,13 @@
     opacity: 0;
 }
 
-@mixin br{
-  border: 1px solid red;
+@mixin show{
+  visibility: visible;
+  opacity: 1;
 }
 
-@mixin show{
-    visibility: visible;
-    opacity: 1;
+@mixin br{
+  border: 1px solid red;
 }
 
 @mixin no-select {
@@ -20,7 +20,6 @@
     -moz-user-select: none;
     user-select: none;
 }
-
 
 @mixin pseudo{
   content:'';

@@ -15,11 +15,11 @@
 
 .modal{
   @extend %fixed-modal;
-  @extend %hide;
+  @include hide;
 
   //visible
   &.is-active{
-    @extend %show;
+    @include show;
   }
 
   //dark
@@ -99,6 +99,15 @@
   }
 }
 
+
+//  div center
+div.c,div.-c{
+  text-align: center;
+  >*{
+    display: inline-block;
+    float: none;
+  }
+}
 
 // PADDING
 $padding-average : 2rem;

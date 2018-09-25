@@ -1,13 +1,7 @@
 @import "../mixins/menus.scss";
 
-ul{
-  display: block;
-  li{
-    list-style-type: none;
-  }
-}
 
-.c{
+div.c{
   >ul{
     display: inline-block;
   }
@@ -27,12 +21,12 @@ ul{
 
   //flat
   &.flat{
-    @extend %inline-menus;
+    @include inline-menus;
   }
 
   //header-menu
   &.header-menu{
-    @extend %inline-menus;
+    @includeinline-menus;
     @include mobile-only(){
       @include slider-menu-props;
       .-menu{
@@ -47,7 +41,7 @@ ul{
 
   //slider
   &.slider{
-    @extend %slider-menu;
+    @include slider-menu;
   }
 
   //accordion
@@ -55,12 +49,12 @@ ul{
     ul{
       >li{
         >ul{
-          @extend %hide;
+          @include hide;
           li{}
         }
         &:hover{
           >ul{
-            @extend %show;
+            @include show;
           }
         }
       }
@@ -74,7 +68,7 @@ ul{
     .dropdown-menu{
       position: absolute;
       width: 100%;
-      @extend %hide;
+      @include hide;
       ul{
         li{
 
@@ -84,9 +78,9 @@ ul{
     .dropdown-button{
       display: block;
       &:hover{
-        @extend %accent-colors;
+        // @extend %accent-colors;
         &+.dropdown-menu{
-          @extend %show;
+          @include show;
         }
       }
     }

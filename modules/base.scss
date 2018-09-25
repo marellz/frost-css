@@ -48,7 +48,7 @@ html,body{
 // general rules
 
 .no-show{
-  @extend %hide;
+  @include hide;
 }
 
 .hide{

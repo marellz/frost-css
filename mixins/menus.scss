@@ -1,3 +1,26 @@
+
+@mixin inline-menus{
+
+  //basic
+  ul{
+    li{
+      display: inline-block;
+    }
+  }
+
+  //centering
+  &.c {
+    text-align: center;
+    ul{
+      display: inline-block;
+    }
+  }
+}
+
+@mixin slider-menu{
+  @include slider-menu-props;
+}
+
 @mixin slider-menu-props(){
   position: fixed;
   height: 100%;

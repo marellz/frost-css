@@ -8,3 +8,10 @@ a{
 hr{
   border-style: solid;
 }
+
+ul{
+  display: block;
+  li{
+    list-style-type: none;
+  }
+}

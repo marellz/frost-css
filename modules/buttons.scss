@@ -26,7 +26,7 @@ button,.button{
   }
 
   // secondary
-  &.s{
+  &.-s,&.secondary{
     line-height: $button-height - (2 * $button-border-width);
     border: $button-border-width solid currentColor;
     background: inherit;
@@ -38,7 +38,7 @@ button,.button{
   }
 
   // disabled
-  &:disabled{
+  &:disabled,&.disabled{
     line-height: $button-height;
     border: none;
     background: rgba(black,.15);
@@ -67,7 +67,7 @@ button,.button{
   // NO STYLING
 
   //default
-  &.default{
+  &.default,&.no-props{
     background: transparent;
     padding: 0 .25em;
     color: inherit;

@@ -32,8 +32,9 @@
 
 // COMPLEX
 
-// mobile large only
-.mobile-large-only{
+// mobile-large-only & tablet-only
+.mobile-large-only,
+.tablet-only{
   display: none !important;
 }
 
@@ -41,10 +42,6 @@
   .mobile-large-only{
     display: block !important;
   }
-}
-// mobile large only
-.tablet-only{
-  display: none !important;
 }
 
 @media screen and (min-width:768px) and(max-width:1024px){

@@ -14,7 +14,7 @@
       .tabs,li{
         @include no-select;
         padding: 0 1em;
-        flex-basis: 80px;
+        flex: 0 1 80px;
         text-align: center;
         cursor: pointer;
 
@@ -27,7 +27,6 @@
 
         &.is-active{
           color: $accent-color;
-          border-bottom: 2px solid currentColor;
         }
       }
     }

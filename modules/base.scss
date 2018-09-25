@@ -11,7 +11,11 @@ html,body{
           box-sizing: border-box;
 }
 
-.frost,#app{
+body,
+.frost,#frost{
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: always;
   font: 100% $font-family;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -26,7 +30,8 @@ html,body{
           -moz-box-direction: normal;
           flex-direction: column;
 
-  .header,.footer{
+  header,.header,
+  footer,.footer{
     -webkit-box-flex: 0;
         -ms-flex: none;
             -webkit-flex: none;
@@ -47,12 +52,15 @@ html,body{
 
 // general rules
 
-.no-show{
-  @include hide;
+.show{
+  @include show;
 }
 
 .hide{
-  display: none;
+  @include hide;
+  &.-n{
+    display: none;
+  }
 }
 
 .no-select{

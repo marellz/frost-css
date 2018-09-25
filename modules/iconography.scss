@@ -1,6 +1,6 @@
 $icon-width: 40px;
 
-.icon{
+.icon,.icn{
   &.button,&.typ,&.txt{
     &:before{
       @include icon-props($icon-width);

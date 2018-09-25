@@ -15,7 +15,7 @@
   }
 
   // CENTERING
-  &.c,&.-c{
+  &.-c{
     text-align: center;
     >.col,>[class*='col-']{
       display: inline-block !important;
@@ -55,14 +55,18 @@
       -moz-box-pack: center;
       -ms-flex-pack: center;
       justify-content: center;
+      >.col{
+        width: auto;
+      }
     }
-    &.wrap{
-      flex-wrap: wrap;
+    &.no-wrap{
+      flex-wrap: nowrap;
     }
   }
 
   // COLS
-  >.col,>[class*="col-"]{
+  >.col,
+  >[class*="col-"]{
     float: left;
     display: block;
   }
@@ -76,7 +80,7 @@
   }
 
   // NO MARGIN
-  &.no-margin{
+  &.no-margin,&.-n-m{
     @include col-x(0%);
     @include x-y(0%);
     >.col{
@@ -87,7 +91,7 @@
 
 
   // SMALL MARGIN
-  &.small-margin{
+  &.small-margin,&.-s-m{
     @include col-x(0.5%);
     @include x-y(0.5%);
     >.col{
@@ -97,7 +101,7 @@
 
 
   // LARGE MARGIN
-  &.large-margin{
+  &.large-margin,&.-l-m{
     $large-margin: 3%;
     @include col-x($large-margin);
     @include x-y($large-margin);
@@ -157,7 +161,9 @@
   }
 
   //cap row width at 1216px
-  max-width: 1216px;
+  &.-dt{
+    max-width: 1216px;
+  }
   margin: 0 auto;
 
 }

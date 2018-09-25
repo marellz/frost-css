@@ -65,7 +65,7 @@ div.c{
   &.dropdown{
     line-height: $button-height;
     position: relative;
-    .dropdown-menu{
+    .-menu,.drop-menu{
       position: absolute;
       width: 100%;
       @include hide;
@@ -75,11 +75,11 @@ div.c{
         }
       }
     }
-    .dropdown-button{
+    .-button,.drop-menu{
       display: block;
       &:hover{
         // @extend %accent-colors;
-        &+.dropdown-menu{
+        &+.drop-menu,&+.-menu{
           @include show;
         }
       }

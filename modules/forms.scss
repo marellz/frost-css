@@ -14,7 +14,7 @@ $input-border-radius : 5px;
     background: none;
   }
 
-  .help-text{
+  .help-text,.input-txt{
     display: block;
   }
 
@@ -363,16 +363,5 @@ $input-border-radius : 5px;
       }
     }
 
-  }
-  /*
-  */
-}
-
-//DO FIELDSET
-fieldset{
-  border-style: solid;
-  padding: 1.5em 1em;
-  legend{
-    display: block;
   }
 }

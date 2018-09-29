@@ -1,8 +1,9 @@
 index.html
-*.css
-frost.css.map
+/*.css
+/*.js
+/frost.css.map
 .sass-cache
-bash-script.js
+/bash-script.js
 /js
 /palette-old.scss
 temp.css

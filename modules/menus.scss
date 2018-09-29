@@ -26,7 +26,7 @@ div.c{
 
   //header-menu
   &.header-menu{
-    @includeinline-menus;
+    @include inline-menus;
     @include mobile-only(){
       @include slider-menu-props;
       .-menu{

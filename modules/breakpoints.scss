@@ -16,7 +16,7 @@
 }
 
 //non-mobile only
-@media screen and(min-width:768px){
+@media screen and(max-width:768px){
   .non-mobile-only{
     display: none !important;
   }

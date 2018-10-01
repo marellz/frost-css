@@ -25,9 +25,7 @@
         NOTE: prevent child elements from adopting
         the text align property
       */
-      &,>*{
-        text-align: initial;
-      }
+      text-align: left;
     }
   }
 

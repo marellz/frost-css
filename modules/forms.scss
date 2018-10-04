@@ -226,8 +226,12 @@ $input-border-radius : 5px;
   &.pills{
     max-width: none;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     position: relative;
+
+    &:before{
+      display: none;
+    }
 
     input{
       height: 0px;

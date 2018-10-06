@@ -1,21 +1,16 @@
 @import "../mixins/menus.scss";
 
-
-div.c{
-  >ul{
-    display: inline-block;
+ul li{
+  a{
+    display: block;
   }
 }
 
 .menu{
   .-menu{
     text-align: inherit;
-  }
-  ul{
-    li{
-      a{
-        display: block;
-      }
+    ul{
+      display: block;
     }
   }
 

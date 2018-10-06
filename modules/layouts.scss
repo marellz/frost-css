@@ -107,11 +107,15 @@
 
 
 //  div center
-div.c,div.-c{
-  text-align: center;
-  >*{
-    display: inline-block;
-    float: none;
+div{
+  &.c,
+  &.-c{
+    text-align: center;
+    >div,h1,ul,span,p,a{
+      display: inline-block;
+      float: none;
+      text-align: initial;
+    }
   }
 }
 

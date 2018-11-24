@@ -1,0 +1,26 @@
+.toast-overlay{
+  position: fixed;
+  background: rgba(black,.05);
+  .toast-message{
+    position: absolute;
+    display: block;
+    // center by default
+    // top by default
+    top: 10px; //not bottom
+    left: 50%; //not left,right
+    transform: translateX(-50%);
+    &.bottom{
+      top: unset;
+      bottom: 10px;
+    }
+    &.right{
+      left: unset;
+      transform: none;
+      right: 10px;
+    }
+    &.left{
+      left: 10px;
+      transform: none;
+    }
+  }
+}

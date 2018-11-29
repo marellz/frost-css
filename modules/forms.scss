@@ -305,6 +305,9 @@ $input-border-radius : 5px;
     }
   }
   &.toggle{
+    &:before{
+      display: none;
+    }
     @include selectable-label;
     margin: 15px 0;
     flex-direction: row;
@@ -321,7 +324,7 @@ $input-border-radius : 5px;
       &+label{
         display: flex;
         align-items: center;
-        margin-left: auto;
+        // margin-left: auto;
         position: relative;
         @include toggle(40px,$gap);
         background: rgba(black,.15);

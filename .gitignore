@@ -1,9 +1,3 @@
-index.html
-/*.css
-/*.js
-/frost.css.map
-.sass-cache
-/bash-script.js
 /js
 /palette-old.scss
-temp.css
+node_modules/

@@ -1,0 +1,30 @@
+{
+  "name": "frost-css",
+  "version": "1.0.0",
+  "description": "A light, simple CSS Framework",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./bin/build",
+    "watch": "./bin/watch"
+  },
+  "keywords": [
+    "\"CSS",
+    "Framework\"",
+    "'Front",
+    "End'",
+    "'Web",
+    "Design'",
+    "'SASS'"
+  ],
+  "author": "\"Dave Njoroge <dave@waweru.design>",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.9"
+  }
+}

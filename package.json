@@ -7,16 +7,12 @@
     "build": "./bin/build",
     "watch": "./bin/watch"
   },
-  "keywords": [
-    "\"CSS",
-    "Framework\"",
-    "'Front",
-    "End'",
-    "'Web",
-    "Design'",
-    "'SASS'"
-  ],
+  "keywords": [ "\"CSS" , "Framework\"", "'Front", "End'", "'Web", "Design'", "'SASS'" ],
   "author": "\"Dave Njoroge <dave@waweru.design>",
+  "repository":{
+    "type": "git",
+    "url": "https://github.com/marellz/frost-css.git"
+  },
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {

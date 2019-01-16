@@ -1986,7 +1986,7 @@ body .main, body .wrap,
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .mobile-only {
     display: none !important;
   }
@@ -2049,7 +2049,6 @@ button, .button {
   padding: 0 1.5em;
   line-height: 35px;
   height: 35px;
-  min-width: 100px;
   font-size: 15px;
   font-style: normal;
   font-family: inherit;
@@ -2264,17 +2263,6 @@ ul li {
 .input input:disabled + label {
   color: gray;
   background: none;
-}
-
-.input:before {
-  text-align: left;
-  font-size: 15px;
-  padding: 5px;
-  display: block;
-  content: attr(data-text);
-  line-height: 17px;
-  font-size: 13px;
-  padding-left: 20px;
 }
 
 .input.is-valid {

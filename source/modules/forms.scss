@@ -50,15 +50,7 @@ $input-border-radius : 5px;
       }
     }
   }
-
-  //helptext
-  &:before{
-    @include input-helptext;
-    line-height: 17px;
-    font-size: 13px;
-    padding-left: 20px;
-  }
-
+  
   //valid/invalid
   &.is-valid{
     color: $green;

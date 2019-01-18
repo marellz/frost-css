@@ -1,114 +1,225 @@
-$input-height: 50px;
-$input-border-radius : 5px;
-.input{
+$input-height-default: 50px;
+$input-border-radius-default: 5px;
+$input-background-default: transparent;
+
+$input-border-width-default: 1px;
+$input-border-style-default: solid;
+$input-border-color-default: currentColor;
+$input-border-default: true;
+
+$input-border: if(variable_exists(input-border),$input-border,$input-border-default);
+
+$input-padding-default: 0 1em;
+
+$input-pill-padding-default: 0 1.5em;
+
+$label-margin-default: .5em 0;
+
+$form-group-margin: 0 20px;
+$form-group-padding: 0 20px;
+
+
+$input-border-style: if(
+  variable_exists(input-border-style),
+  $input-border-style,
+  $input-border-style-default
+);
+
+$input-border-color: if(
+  variable_exists(input-border-color),
+  $input-border-color,
+  $input-border-color-default
+);
+
+$input-border-width: if(
+  variable_exists(input-border-width),
+  $input-border-width,
+  $input-border-width-default
+);
+
+$input-height: if(
+  variable_exists(input-height),
+  $input-height,
+  $input-height-default
+);
+
+$input-background: if(
+  variable_exists(input-background),
+  $input-background,
+  $input-background-default
+);
+
+$input-border-radius: if(
+  variable_exists(input-border-radius),
+  $input-border-radius,
+  $input-border-radius-default
+);
+
+$input-padding: if(
+  variable_exists(input-padding),
+  $input-padding,
+  $input-padding-default
+);
+
+$input-pill-padding: if(
+  variable_exists(input-pill-padding),
+  $input-pill-padding,
+  $input-pill-padding-default
+);
+
+$label-margin: if(
+  variable_exists(label-margin),
+  $label-margin,
+  $label-margin-default
+);
+
+@mixin input-border-props($direction: false) {
+  @if($input-border){
+    $prop: if($direction, border-#{$direction}, #{border});
+    #{$prop}: $input-border-width $input-border-style $input-border-color;
+  } @else {
+    border:none;
+  }
+
+  @if($input-border == 'none'){
+    border: none;
+  }
+}
+
+@import "mixins/forms";
+
+.form-group {
+  padding: $form-group-padding;
+  margin: $form-group-margin;
+}
+
+.input {
   display: flex;
   flex-direction: column-reverse;
   position: relative;
-
-
   min-width: 200px;
-  // max-width: 450px;
+  max-width: 450px;
 
-  input,label,span,i{
+  input,
+  label,
+  span,
+  i {
     display: block;
     background: none;
-  }
-
-  .help-text,.input-txt{
-    display: block;
   }
 
   //global
   & > input,
   &.textarea > textarea {
     color: inherit;
-    // border: $border-props;
   }
 
-  input{
+  input {
     font: inherit;
     color: inherit;
 
-    @include input-props($input-height);
+    @include input-props;
     @include input-style;
 
-    //label
-    &+label{
-      @include label-props();
-    }
-
     //disabled
-    &:disabled{
+    &:disabled {
       color: gray;
-      background: rgba(black,.15);
+      background: rgba(black, 0.15);
       pointer-events: none;
       cursor: not-allowed;
 
-      &+label{
+      & + label {
         color: gray;
         background: none;
       }
     }
   }
-  
-  //valid/invalid
-  &.is-valid{
+
+  label {
+    @include label-props;
+  }
+
+  .response-txt {
+    font-size: 12px;
+    padding: 5px;
+    color: $grey;
+    order: -1;
+    &.red,
+    &.error {
+      color: $red;
+    }
+    &.green,
+    &.success {
+      color: $green;
+    }
+  }
+
+  // valid/invalid
+  &.is-valid {
     color: $green;
   }
-  &.is-invalid{
+  &.is-invalid {
     color: $red;
   }
 
+  // BLOCK
+  &.-b,
+  &.block {
+    max-width: unset;
+  }
 
   // ANIMATED -> Google Style
-  &.animated{
+  /*
+  &.animated {
     $lh: $input-height + 10px;
     position: relative;
-    input{
+    input {
       height: $lh;
       border-top: none;
       border-left: none;
       border-right: none;
       border-radius: 0;
-      &+label{
+      & + label {
         position: absolute;
         top: 0;
-        @include input-props($lh+5px);
+        // @include input-props();
         line-height: $input-height;
       }
     }
 
     &.has-data input,
-    input:focus{
-      &+label{
+    input:focus {
+      & + label {
         transform: translateY(-5px);
         font-size: 10px;
         line-height: 11px;
       }
-
     }
 
-    label{
+    label {
       transition: all 0.2s ease;
     }
   }
+  */
 
   //FILE
-  &.file{
-    input{
+  &.file {
+    input {
       @include hide;
-      &+label{@include hide}
-      &[type='file'],
-      &[type='image']{
+      & + label {
+        @include hide;
+      }
+      &[type="file"],
+      &[type="image"] {
         border: none;
         height: 0px;
         width: 0px;
         font-size: 0;
-        &+label{
+        & + label {
           @include no-select;
           @include show;
           @include input-style;
-          @include input-props($input-height);
+          @include input-props;
           line-height: $input-height;
           text-align: center !important;
           overflow: hidden;
@@ -118,9 +229,9 @@ $input-border-radius : 5px;
     }
 
     //active file-input
-    &.has-file{
-      input{
-        &+label{
+    &.has-file {
+      input {
+        & + label {
           background: $accent-color;
           color: white;
         }
@@ -129,62 +240,64 @@ $input-border-radius : 5px;
   }
 
   //TEXTAREA
-
-  &.textarea{
-    max-width: none;
+  &.textarea {
+    max-width: 450px;
     // hide any invalid elements
-    input{display: none;}
-
-    textarea,label,span{
-      display: block
+    input {
+      display: none;
     }
 
-    label{
-      @include label-props;
+    textarea,
+    label,
+    span {
+      display: block;
     }
 
-    textarea{
+    &.-b,&.block{
+      max-width: none;
+    }
+
+    textarea {
       @include input-style;
       @include textarea-props;
     }
 
-    &.h{
-      textarea{
+    &.h-resize {
+      textarea {
         resize: horizontal;
       }
     }
-    &.v{
-      textarea{
+    &.v-resize {
+      textarea {
         resize: vertical;
       }
     }
-    &.no-resize{
-      textarea{
+    &.no-resize {
+      textarea {
         resize: none;
       }
     }
   }
 
   // SELECT
-  &.select{
+  &.select {
     display: inline-block;
     position: relative;
     min-width: unset;
-    select{
+    select {
       position: relative;
       @include select-props;
       outline: none;
       background: transparent;
-      -moz-appearance:none;
-      -webkit-appearance:none;
+      -moz-appearance: none;
+      -webkit-appearance: none;
       z-index: 5;
-      &::-ms-expand{
+      &::-ms-expand {
         display: none;
       }
-
     }
 
-    &:after{
+    &:after {
       z-index: 1;
       @include pseudo;
       position: absolute;
@@ -192,119 +305,126 @@ $input-border-radius : 5px;
       top: 50%;
       transform: translateY(1px);
       border: 7px solid transparent;
-      border-top-color: rgba(black,.45);
+      border-top-color: rgba(black, 0.45);
     }
-    &.c{
-      select{
+
+    &.c {
+      select {
         text-align: center;
       }
     }
 
-    //multiple select
-    &.group{
+    // multiple select
+    &.group {
       max-width: none;
       display: flex;
       flex-direction: row;
-      select{
-        //props for multiple select
-      }
     }
   }
 
+  // PILLS
 
-
-  //PILLS
-  // pill group
-  &.pills{
+  &.pills {
     max-width: none;
     flex-direction: row;
-    flex-wrap: wrap;
     position: relative;
 
-    &:before{
-      display: none;
-    }
-
-    input{
-      height: 0px;
-      width: 0px;
-      position: absolute;
-      @include hide;
-      &+label{
-        @include input-style;
-        @include input-props;
-        @include no-select;
-        margin: 5px;
-        padding: 0 1em;
-        text-align: center;
-
-        height: 40px;
-        line-height: 38px;
-      }
-
-      &:checked{
-        &+label{
-          border-color: $accent-color;
-          background:$accent-color;
-          color: white;
-        }
-      }
+    &.wrap {
+      flex-wrap: wrap;
     }
 
     //wrapper
-    .pill{
+    .pill {
       display: inline-block;
       margin: 5px;
-      input{
-        &+label{
+
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+
+      input {
+        height: 0px;
+        width: 0px;
+        position: absolute;
+        @include hide;
+        & + label {
+          @include no-select;
+          line-height: $input-height;
+          background: #e6e6e6;
+          border-radius: $input-border-radius;
+          padding: $input-pill-padding;
+          text-align: center;
+          cursor: pointer;
           margin: 0;
+        }
+
+        &:checked {
+          & + label {
+            background: $accent-color;
+            color: white;
+          }
         }
       }
 
+      &.outline {
+        input {
+          & + label {
+            height: $input-height - $input-border-width;
+            @include input-border-props;
+            background: transparent;
+          }
+
+          &:checked{
+            & + label{
+              color: $accent-color;
+            }
+          }
+        }
+      }
     }
     // centered pills
-    &.c{
+    &.c {
       justify-content: center;
     }
 
     //block-level
-    &.b{
+    &.b {
       flex-direction: column;
-      .pill{
-        label{
+      .pill {
+        label {
           width: 100%;
-          line-height: normal;
-          height: auto;
           padding: 10px;
         }
       }
     }
   }
 
-
-
-
   // TOGGLE
-  @mixin toggle($toggle-size,$gap:1px){
+
+  @mixin toggle($toggle-size, $gap: 1px) {
     height: $toggle-size;
     width: $toggle-size * 2;
     border-radius: $toggle-size / 2;
-    &:before{
-      height: $toggle-size - $gap*2;
-      width: $toggle-size - $gap*2;
+    &:before {
+      height: $toggle-size - $gap * 2;
+      width: $toggle-size - $gap * 2;
       left: $gap;
       top: $gap;
     }
   }
-  &.toggle{
-    &:before{
+
+  &.toggle {
+    &:before {
       display: none;
     }
     @include selectable-label;
     margin: 15px 0;
     flex-direction: row;
     align-items: center;
-    .toggle-label{
+    .toggle-label {
       display: inline-block;
       line-height: 40px;
       vertical-align: middle;
@@ -312,16 +432,16 @@ $input-border-radius : 5px;
     }
 
     $gap: 2px;
-    input{
-      &+label{
+    input {
+      & + label {
         display: flex;
         align-items: center;
         // margin-left: auto;
         position: relative;
-        @include toggle(40px,$gap);
-        background: rgba(black,.15);
+        @include toggle(40px, $gap);
+        background: rgba(black, 0.15);
         transition: all 0.5s ease;
-        &:before{
+        &:before {
           right: auto;
           @include pseudo;
           position: absolute;
@@ -331,37 +451,40 @@ $input-border-radius : 5px;
         }
       }
 
-      &:checked{
-        &+label{
+      &:checked {
+        & + label {
           background: $accent-color;
-          &:before{
+          &:before {
             left: unset;
             right: $gap;
           }
         }
       }
     }
-    &.large{
+    &.large {
       $gap: 3px;
-      input+label{
-        @include toggle(50px,$gap);
+      input + label {
+        @include toggle(50px, $gap);
       }
-      input:checked + label:before{
+      input:checked + label:before {
         left: unset;
         right: $gap;
       }
-
     }
-    &.small{
+    &.small {
       $gap: 2px;
-      input+label{
-        @include toggle(30px,$gap);
+      input + label {
+        @include toggle(30px, $gap);
       }
-      input:checked + label:before{
+      input:checked + label:before {
         left: unset;
         right: $gap;
       }
     }
-
   }
+}
+
+.label {
+  display: block;
+  @include label-props;
 }

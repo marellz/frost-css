@@ -1,19 +1,22 @@
-@mixin input-style($border-props: 1px solid currentColor){
-  border-radius: 2px;
-  padding: 0 5px;
-  background: transparent;
-  border: $border-props;
+@mixin input-style(){
+  border-radius: $input-border-radius;
+  padding: $input-padding;
+  background: $input-background;
+  
+  // border: $input-border-props;
+  @include input-border-props;
 }
 
-@mixin input-props($height: 40px){
-  height: $height;
+@mixin input-props(){
+  height: $input-height;
   outline: none;
 }
 
 @mixin label-props($font-size:15px){
   text-align: left;
   font-size: $font-size;
-  padding: 5px;
+  padding: $input-padding;
+  margin: $label-margin;
 }
 
 @mixin input-helptext($font-size: 15px){
@@ -23,7 +26,7 @@
 }
 
 @mixin animated-input-props(){
-  @include input-props();
+  @include input-props;
 }
 
 @mixin textarea-props(){
@@ -42,11 +45,11 @@
 
 
 @mixin select-props($height: 40px){
-  @include input-props($height);
+  @include input-props;
   @include input-style;
   display: block;
   width: 100%;
-  height: $height;
+  height: $input-height;
   padding: 0 20px;
   padding-right: $height
 }
@@ -57,12 +60,9 @@
     height: 0;
     width: 0;
     font-size: 0;
-    &+label{
-
-    }
+    // &+label{}
   }
 }
-
 
 
 @mixin placeholder{
@@ -70,6 +70,7 @@
     input::-moz-placeholder{@content;}
     input:-moz-placeholder{@content;}
     input:-ms-placeholder{@content;}
+    
     textarea::-webkit-input-placeholder{@content;}
     textarea::-moz-placeholder{@content;}
     textarea:-moz-placeholder{@content;}

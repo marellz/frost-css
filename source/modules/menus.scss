@@ -64,11 +64,7 @@ ul li{
       position: absolute;
       width: 100%;
       @include hide;
-      ul{
-        li{
-
-        }
-      }
+      // ul{li{}}
     }
     .-button,.drop-menu{
       display: block;

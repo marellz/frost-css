@@ -2,7 +2,7 @@
 $button-height-default: 40px;
 $button-border-radius-default: 3px;
 $button-border-width-default: 1px;
-$button-padding-default: 1em;
+$button-padding-default: 0 2em;
 
 $button-height: if(
   variable_exists(button-height),
@@ -25,24 +25,28 @@ $button-padding: if(
   $button-padding-default
 );
 
+
+@import "mixins/buttons";
+
 @function button-s-line-height() {
   $line-height: $button-height - (2 * $button-border-width);
   @return $line-height;
 }
 
 .buttons {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
   button,
   .button {
     margin: 5px;
-    vertical-align: middle;
   }
 }
 
 button,
 .button {
   @include no-select;
-  @include button($button-height);
+  @include button();
   @if ($button-border-radius) {
     border-radius: $button-border-radius;
   }
@@ -59,7 +63,7 @@ button,
     background: $alt-color;
   }
 
-
+  //outlined
   &.outline {
     line-height: button-s-line-height();
     border: $button-border-width solid currentColor;

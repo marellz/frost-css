@@ -1,37 +1,36 @@
 //variables
-@import 'variables.scss';
+
+@import 'modules/variables';
 
 //functions
-@import "functions/wordify.scss";
-@import "functions/brightness.scss";
+@import "functions/wordify";
+@import "functions/brightness";
 
-//extends
 
 //mixins
-@import "mixins/general.scss";
-@import "mixins/buttons.scss";
-@import "mixins/breakpoints.scss";
-@import "mixins/forms.scss";
-@import "mixins/icons.scss";
+@import "mixins/general";
+@import "mixins/breakpoints";
+
+@import "mixins/icons";
 
 //tools
-@import "tools/columns.scss";
+@import "tools/columns";
 
 //modules
-@import "modules/columns.scss";
+@import "modules/columns";
 
-@import "modules/base.scss";
-@import "modules/breakpoints.scss";
-@import "modules/buttons.scss";
-@import "modules/dialog.scss";
-@import "modules/elements.scss";
-@import "modules/forms.scss";
-@import "modules/iconography.scss";
-@import "modules/layouts.scss";
-@import "modules/menus.scss";
-@import "modules/navigation.scss";
-@import "modules/tables.scss";
-@import "modules/tabs.scss";
-@import "modules/toasts.scss";
-@import "modules/typography.scss";
-@import "modules/wrappers.scss";
+@import "modules/base";
+@import "modules/breakpoints";
+@import "modules/buttons";
+@import "modules/dialog";
+@import "modules/elements";
+@import "modules/forms";
+@import "modules/iconography";
+@import "modules/layouts";
+@import "modules/menus";
+@import "modules/navigation";
+@import "modules/tables";
+@import "modules/tabs";
+@import "modules/toasts";
+@import "modules/typography";
+@import "modules/wrappers";

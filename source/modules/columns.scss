@@ -21,11 +21,9 @@
       display: inline-block !important;
       float: none;
       vertical-align: top;
-      /*
-        NOTE: prevent child elements from adopting
-        the text align property
-      */
-      text-align: left;
+      *{
+        text-align: initial;
+      }
     }
   }
 

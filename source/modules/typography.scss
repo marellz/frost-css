@@ -27,7 +27,7 @@ i,
 p,
 legend {
   &.typ {
-    margin: 0.67em;
+    padding: 0.67em;
     display: block;
 
     &.no-margin {
@@ -41,7 +41,6 @@ legend {
 
   &.typ,
   &.txt {
-    text-align: initial;
     font-weight: 400;
 
     //align

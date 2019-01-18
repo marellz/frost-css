@@ -1,75 +1,116 @@
-
 //buttons
-$button-height: 35px;
-$button-border-radius: 3px;
-$button-border-width: 1px;
+$button-height-default: 40px;
+$button-border-radius-default: 3px;
+$button-border-width-default: 1px;
+$button-padding-default: 1em;
 
-.buttons{
+$button-height: if(
+  variable_exists(button-height),
+  $button-height,
+  $button-height-default
+);
+$button-border-radius: if(
+  variable_exists(button-border-radius),
+  $button-border-radius,
+  $button-border-radius-default
+);
+$button-border-width: if(
+  variable_exists(button-border-width),
+  $button-border-width,
+  $button-border-width-default
+);
+$button-padding: if(
+  variable_exists(button-padding),
+  $button-padding,
+  $button-padding-default
+);
+
+@function button-s-line-height() {
+  $line-height: $button-height - (2 * $button-border-width);
+  @return $line-height;
+}
+
+.buttons {
   text-align: center;
-  button,.button{
+  button,
+  .button {
     margin: 5px;
     vertical-align: middle;
   }
 }
 
-button,.button{
+button,
+.button {
   @include no-select;
   @include button($button-height);
-  @if($button-border-radius){
+  @if ($button-border-radius) {
     border-radius: $button-border-radius;
   }
 
   //primary
-  &{
+  & {
     background: $accent-color;
     color: white;
   }
 
   // secondary
-  &.-s,&.secondary{
-    line-height: $button-height - (2 * $button-border-width);
-    border: $button-border-width solid currentColor;
-    background: inherit;
-    color: $accent-color;
+  &.-s,
+  &.secondary{
+    background: $alt-color;
+  }
 
-    &.no-outline{
-      border: none;
+
+  &.outline {
+    line-height: button-s-line-height();
+    border: $button-border-width solid currentColor;
+    background: transparent;
+    color: $accent-color;
+    &.-s,&.secondary{
+      color: $alt-color;
     }
   }
 
+  //block
+  &.-b,
+  &.block{
+    display: block;
+    width: 100%;
+  }
+
+
   // disabled
-  &:disabled,&.disabled{
+  &:disabled,
+  &.disabled {
     line-height: $button-height;
     border: none;
-    background: rgba(black,.15);
+    background: rgba(black, 0.15);
     color: grey;
     cursor: not-allowed;
   }
 
-
   // SPECIAL/EVENT BUTTONS
 
   //close
-  &.close{
+  &.close {
     color: white;
     @include close-button($button-height);
-    &.s{
+    &.s {
       color: $accent-color;
     }
   }
 
   //loading
-  &.loading{
+  &.loading {
     @include loading-button($button-height);
   }
-
 
   // NO STYLING
 
   //default
-  &.default,&.no-props{
+  &.default,
+  &.no-props {
     background: transparent;
-    padding: 0 .25em;
+    padding: 0 0.25em;
     color: inherit;
     min-width: unset;
     line-height: initial;

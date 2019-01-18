@@ -1,10 +1,10 @@
-@mixin button($height){
+@mixin button(){
   display: inline-block;
   vertical-align: middle;
   text-align: center !important;
-  padding: 0 1.5em;
-  line-height: $height;
-  height: $height;
+  padding: $button-padding;
+  line-height: $button-height;
+  height: $button-height;
 
   font-size: 15px;
   font-style: normal;

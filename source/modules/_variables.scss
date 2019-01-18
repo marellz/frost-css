@@ -1,0 +1,39 @@
+
+
+/*
+
+      ****   COLORS ****
+
+*/
+
+$red-default: #db222a;
+$green-default : #06CE4C;
+$amber-default: #ffba08;
+$blue-default: #1c77c3;
+
+$grey-default : #6D7771;
+$dark-default : #1B181E;
+$light-default : #F9F8F2;
+$white-default : #fff;
+$black-default : #030C11;
+
+$accent-color-default: #DB162F;
+$alt-color-default: #3454D1;
+
+// if accent-color is not provided, use accent default color
+
+$amber : if(variable_exists(color-amber), $color-amber ,$amber-default);
+$blue : if(variable_exists(color-blue), $color-blue ,$blue-default);
+$green : if(variable_exists(color-green), $color-green ,$green-default);
+$red : if(variable_exists(color-red), $color-red ,$red-default);
+$grey : if(variable_exists(color-grey), $color-grey ,$grey-default);
+$white : if(variable_exists(color-white), $color-white ,$white-default);
+$black : if(variable_exists(color-black), $color-black ,$black-default);
+
+
+$dark : if(variable_exists(dark), $dark ,$dark-default);
+$light : if(variable_exists(light), $light ,$light-default);
+
+
+$accent-color : if(variable_exists(accent-color), $accent-color ,$accent-color-default);
+$alt-color : if(variable_exists(alt-color), $alt-color ,$alt-color-default);

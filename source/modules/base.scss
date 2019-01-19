@@ -18,33 +18,34 @@ body,
   font: 100% sans-serif;
   display: flex;
   flex-direction: column;
-  header,
-  .header,
-  footer,
-  .footer {
-    flex: none;
-  }
-
-  .main,
-  .wrap {
-    flex: 1 0 auto;
-    position: relative;
-  }
 }
 
+main,
+.main,
+.wrap {
+  flex: 1 0 auto;
+  position: relative;
+}
 
 header,
-.header{
+.header {
+  flex: none;
   display: flex;
-  &.-b,.block{
-    display: flex;
+  flex-direction: row;
+  &.-b,
+  .block {
+    display: block;
   }
-  .ml-a{
-    margin-left: auto
+  .header-right {
+    margin-left: auto;
   }
 
-  .mr-a{
+  .header-left {
     margin-right: auto;
+  }
+  &.center,&.-c{
+    align-content: center;
+    justify-content: center;
   }
 }
 

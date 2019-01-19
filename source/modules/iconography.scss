@@ -1,4 +1,13 @@
-$icon-width: 40px;
+@mixin icon-props($width:40px){
+  line-height: inherit;
+  width: $icon-width;
+  text-align: center;
+  display: inline-block;
+}
+
+
+$icon-width-default: 40px;
+$icon-width : if(variable_exists(icon-width),$icon-width,$icon-width-default);
 
 .icon,.icn{
   &.button,&.typ,&.txt{

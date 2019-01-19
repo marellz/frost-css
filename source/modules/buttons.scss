@@ -26,7 +26,103 @@ $button-padding: if(
 );
 
 
-@import "mixins/buttons";
+@mixin button(){
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center !important;
+  padding: $button-padding;
+  line-height: $button-height;
+  height: $button-height;
+
+  font-size: 15px;
+  font-style: normal;
+  font-family: inherit;
+  font-weight: normal;
+
+  border: none;
+  overflow: hidden;
+  outline: none;
+
+  &::-moz-focus-inner{
+    border: 0;
+  }
+}
+
+
+@mixin close-button($height, $width : false){
+  $radius : $height;
+  width: $radius;
+  height:  $radius;
+  line-height:  $radius;
+  content: '';
+  padding: 0;
+  min-width: unset;
+  border-radius: 50%;
+  position: relative;
+  &:after,&:before{
+    @if($width){
+      border-radius: $width;
+    }
+    $shear-height : 3px;
+    $shear-width : 18px;
+    @include pseudo;
+    height: $shear-height;
+    width: $shear-width;
+    background: currentColor;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: $shear-width / -2;
+    margin-top: $shear-height / -2;
+  }
+
+  &:after{
+    transform: rotate(-45deg);
+  }
+
+  &:before{
+    transform: rotate(45deg);
+  }
+
+  &.s{
+    color: grey;
+    background: inherit;
+    border: $button-border-width solid currentColor;
+  }
+}
+
+@mixin loading-button($height){
+  $loading-height: $height;
+  $loading-gap: 6px;
+  $loading-shear-width: 3px;
+  min-width: unset;
+  padding: $loading-gap;
+  height: $loading-height;
+  line-height: $loading-height;
+  width: $loading-height;
+  &:before{
+    @include pseudo;
+    display: inline-block;
+    height: $loading-height - (2 * ($loading-gap + $loading-shear-width));
+    width: $loading-height - (2 * ($loading-gap + $loading-shear-width));
+    border: $loading-shear-width solid currentColor;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    animation: loading-button 1s linear infinite;
+  }
+}
+
+@keyframes loading-button{
+  0% {
+    transform: rotate(0deg)
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+
 
 @function button-s-line-height() {
   $line-height: $button-height - (2 * $button-border-width);

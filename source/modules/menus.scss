@@ -1,4 +1,72 @@
-@import "../mixins/menus.scss";
+
+
+@mixin inline-menus{
+
+  //basic
+  ul{
+    li{
+      display: inline-block;
+    }
+  }
+
+  //centering
+  &.c {
+    text-align: center;
+    ul{
+      display: inline-block;
+    }
+  }
+}
+
+@mixin slider-menu{
+  @include slider-menu-props;
+}
+
+@mixin slider-menu-props(){
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  visibility: hidden;
+  opacity: 0;
+  background: rgba(black,.15);
+  z-index: 500;
+  .-menu{
+    background: $accent-color;
+    color: white;
+    box-shadow: 0 0 25px -10px;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+
+    //normal - left;
+    left: 0;
+    width: 250px;
+
+    //right
+    &.r{
+      right: 0;
+      left: unset;
+      transform: translateX(100%);
+    }
+  }
+
+  &.is-active{
+    visibility: visible;
+    opacity: 1;
+    .-menu{
+      transform: translateX(0%);
+    }
+  }
+
+  &,.-menu{
+    transition: all 0.5s ease;
+  }
+}
+
 
 ul li{
   a{

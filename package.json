@@ -1,6 +1,6 @@
 {
   "name": "frost-css",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A light, simple CSS Framework",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

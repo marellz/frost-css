@@ -1,23 +1,15 @@
 //variables
-
 @import 'modules/variables';
 
-//functions
+// functions
 @import "functions/wordify";
 @import "functions/brightness";
 
-
-//mixins
+// mixins
 @import "mixins/general";
 @import "mixins/breakpoints";
 
-@import "mixins/icons";
-
-//tools
-@import "tools/columns";
-
-//modules
-
+// modules
 @import "modules/base";
 @import "modules/columns";
 @import "modules/breakpoints";

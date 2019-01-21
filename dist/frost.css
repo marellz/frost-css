@@ -129,7 +129,17 @@ header.center, header.-c,
 }
 
 .row.-c {
-  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .row.-c > .col, .row.-c > [class*='col-'] {
@@ -170,10 +180,10 @@ header.center, header.-c,
   width: auto;
 }
 
-.row.flex.no-wrap {
-  -webkit-flex-wrap: nowrap;
-      -ms-flex-wrap: nowrap;
-          flex-wrap: nowrap;
+.row.flex.wrap {
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
 }
 
 .row > .col,

@@ -16,7 +16,9 @@
 
   // CENTERING
   &.-c{
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     >.col,>[class*='col-']{
       display: inline-block !important;
       float: none;
@@ -29,7 +31,6 @@
 
   // FLEX
   &.flex{
-
     display: flex;
     flex-direction: row;
     >.col{
@@ -42,8 +43,8 @@
         width: auto;
       }
     }
-    &.no-wrap{
-      flex-wrap: nowrap;
+    &.wrap{
+      flex-wrap: wrap;
     }
   }
 

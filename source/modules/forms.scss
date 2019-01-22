@@ -139,7 +139,7 @@ $label-margin: if(
   width: 100%;
   height: $input-height;
   padding: 0 20px;
-  padding-right: $height
+  padding-right: $input-height;
 }
 
 @mixin selectable-label{
@@ -379,7 +379,7 @@ $label-margin: if(
       position: relative;
       @include select-props;
       outline: none;
-      background: transparent;
+      background: $input-background;
       -moz-appearance: none;
       -webkit-appearance: none;
       z-index: 5;
@@ -403,6 +403,17 @@ $label-margin: if(
       select {
         text-align: center;
       }
+    }
+
+    &.-b,&.block{
+      max-width: none;
+    }
+
+    &.outline{
+      select{
+        border: $input-border-width $input-border-style $input-border-width;
+      }
+
     }
 
     // multiple select
